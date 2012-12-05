@@ -1,0 +1,115 @@
+Parsing succeeded.
+Module variables:
+|  x : bool
+|  y : long
+Module functions:
+|  increment : short definition
+|  |  Parameters:
+|  |  |  number : short
+|  |  Statements:
+|  |  |  Expression statement:
+|  |  |  |  Decrement expression:
+|  |  |  |  |  L-Value: number
+|  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  Constant: 0 : long
+|  |  |  Expression statement:
+|  |  |  |  Increment expression:
+|  |  |  |  |  L-Value: number
+|  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  Constant: 0 : long
+|  |  |  Assignment statement:
+|  |  |  |  L-Value: number
+|  |  |  |  |  Index:
+|  |  |  |  |  |  Constant: 0 : long
+|  |  |  |  Expression:
+|  |  |  |  |  Binary + expression:
+|  |  |  |  |  |  Left expression:
+|  |  |  |  |  |  |  L-Value: number
+|  |  |  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  |  |  Constant: 0 : long
+|  |  |  |  |  |  Right expression:
+|  |  |  |  |  |  |  Constant: 1 : long
+|  |  Return expression:
+|  |  |  L-Value: number
+|  |  |  |  Index:
+|  |  |  |  |  Constant: 0 : long
+|  position : short definition
+|  |  Parameters:
+|  |  |  needle : short
+|  |  |  haystack : short[10]
+|  |  Local variables:
+|  |  |  i : short
+|  |  |  found : bool
+|  |  Statements:
+|  |  |  Assignment statement:
+|  |  |  |  L-Value: i
+|  |  |  |  |  Index:
+|  |  |  |  |  |  Constant: 0 : long
+|  |  |  |  Expression:
+|  |  |  |  |  Constant: 0 : long
+|  |  |  Assignment statement:
+|  |  |  |  L-Value: found
+|  |  |  |  |  Index:
+|  |  |  |  |  |  Constant: 0 : long
+|  |  |  |  Expression:
+|  |  |  |  |  Constant: 1 : bool
+|  |  |  Loop statement:
+|  |  |  |  Expression:
+|  |  |  |  |  Binary and expression:
+|  |  |  |  |  |  Left expression:
+|  |  |  |  |  |  |  Binary < expression:
+|  |  |  |  |  |  |  |  Left expression:
+|  |  |  |  |  |  |  |  |  L-Value: i
+|  |  |  |  |  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  |  |  |  |  Constant: 0 : long
+|  |  |  |  |  |  |  |  Right expression:
+|  |  |  |  |  |  |  |  |  Constant: 10 : long
+|  |  |  |  |  |  Right expression:
+|  |  |  |  |  |  |  Binary = expression:
+|  |  |  |  |  |  |  |  Left expression:
+|  |  |  |  |  |  |  |  |  L-Value: found
+|  |  |  |  |  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  |  |  |  |  Constant: 0 : long
+|  |  |  |  |  |  |  |  Right expression:
+|  |  |  |  |  |  |  |  |  Constant: 1 : bool
+|  |  |  |  Statements:
+|  |  |  |  |  Conditional statement:
+|  |  |  |  |  |  Expression:
+|  |  |  |  |  |  |  Binary = expression:
+|  |  |  |  |  |  |  |  Left expression:
+|  |  |  |  |  |  |  |  |  L-Value: haystack
+|  |  |  |  |  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  |  |  |  |  L-Value: i
+|  |  |  |  |  |  |  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  |  |  |  |  |  |  Constant: 0 : long
+|  |  |  |  |  |  |  |  Right expression:
+|  |  |  |  |  |  |  |  |  L-Value: needle
+|  |  |  |  |  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  |  |  |  |  Constant: 0 : long
+|  |  |  |  |  |  Then statements:
+|  |  |  |  |  |  |  Assignment statement:
+|  |  |  |  |  |  |  |  L-Value: found
+|  |  |  |  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  |  |  |  Constant: 0 : long
+|  |  |  |  |  |  |  |  Expression:
+|  |  |  |  |  |  |  |  |  Constant: 1 : bool
+|  |  |  |  |  |  Else statements:
+|  |  |  |  |  |  |  Assignment statement:
+|  |  |  |  |  |  |  |  L-Value: i
+|  |  |  |  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  |  |  |  Constant: 0 : long
+|  |  |  |  |  |  |  |  Expression:
+|  |  |  |  |  |  |  |  |  Function call to increment:
+|  |  |  |  |  |  |  |  |  |  Parameters:
+|  |  |  |  |  |  |  |  |  |  |  L-Value: i
+|  |  |  |  |  |  |  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  |  |  |  |  |  |  Constant: 0 : long
+|  |  Return expression:
+|  |  |  Unary neg expression:
+|  |  |  |  Unary neg expression:
+|  |  |  |  |  L-Value: i
+|  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  Constant: 0 : long
+|  andtest : bool declaration
+|  |  Parameters:
+|  |  |  something : bool
