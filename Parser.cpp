@@ -9,7 +9,7 @@ bool Parser::parse(Tokenizer *t) {
 }
 
 void Parser::printError(string msg) {
-	cerr << "Error @ " << tokenizer->currentPosition().toString() << ": " << msg << endl;
+	cerr << "Parse Error @ " << tokenizer->currentPosition().toString() << ": " << msg << endl;
 }
 
 unique_ptr<Module> Parser::parseModule(unique_ptr<Module> module) {

@@ -37,9 +37,11 @@ public:
 	
 	const Position &currentPosition()   const { return position; }
 	void			printSymbols() {
-		LOG << "Tokenizer Symbol Table" << endl;
-		for (auto it = symbols.begin(); it != symbols.end(); it++)
-		LOG << (*it)->getText() << " " << (*it)->getType() << endl;
+		LOG << "Tokenizer Symbol Table:" << endl;
+		for (auto it = symbols.begin(); it != symbols.end(); it++) {
+			if ((*it)->getType() != 42) continue;
+			LOG << "  " << (*it)->getText() << " " << (*it)->getType() << endl;
+		}
 	}
 	
 private:

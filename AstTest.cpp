@@ -29,8 +29,16 @@ int main(int argc, char *argv[]) {
 	cout << "Parsing succeeded." << endl;
 	Module * m = p.getModule();
 	
+	// Execute type checking
+	TypeChecker tc;
+	cout << m->apply(tc);
+	
+	// Dump the AST
 	Dump d;
 	cout << m->apply(d);
+	
+	//LOG << endl << endl;
+	//t.printSymbols();
 	
 	// close our input file
 	file.close();

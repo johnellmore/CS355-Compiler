@@ -164,3 +164,8 @@ string FuncCall::apply(Visitor & v) {
 ScalarType FuncCall::getType() const {
 	return name->getScalarType();
 }
+
+// TypeConversion --------------------------------
+string TypeConversion::apply(Visitor &v) {
+	return v.applyTypeConversion(this, expr->apply(v));
+}

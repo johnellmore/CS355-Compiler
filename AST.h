@@ -20,6 +20,7 @@ class Constant;
 class LValue;
 class IncDecExpr;
 class FuncCall;
+class TypeConversion;
 
 // handy short cuts
 typedef list<unique_ptr<VarDecl>>   DeclList;
@@ -44,6 +45,7 @@ public:
 	virtual string applyLValue(LValue *lv,string expr) = 0;
 	virtual string applyIncDecExpr(IncDecExpr *id,string lvalue) = 0;
 	virtual string applyFuncCall(FuncCall *fc,const StringList &params) = 0;
+	virtual string applyTypeConversion(TypeConversion *tc, string expr) = 0;
 
 protected:
 	static string concatenate(const StringList &strings);
@@ -232,4 +234,14 @@ public:
 	
 	Token *                     name;
 	ExprList                    params;
+};
+
+class TypeConversion : public AST {
+public:
+	TypeConversion(ScalarType to) : AST(Position(0, 0)), output(to) { }
+	virtual string apply(Visitor &v);
+	ScalarType getType() const { return output; }
+	
+	ScalarType					output;
+	unique_ptr<Expr>			expr;
 };

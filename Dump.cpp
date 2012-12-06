@@ -123,3 +123,8 @@ string Dump::indent(string s) {
 	}
 	return output;
 }
+
+string Dump::applyTypeConversion(TypeConversion *tc,string expr) {
+	return "Type Conversion:\n"
+		+  indent(expr);
+}

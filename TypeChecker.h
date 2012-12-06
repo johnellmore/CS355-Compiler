@@ -1,5 +1,7 @@
 class TypeChecker : public Visitor {
 public:
+	void printError(Position pos, string msg);
+	
     string applyType(Type *type);
     string applyModule(Module *module,const StringList &vars,const StringList &funcs);
     string applyVarDecl(VarDecl *vd,string type);
@@ -14,4 +16,5 @@ public:
     string applyLValue(LValue *lv,string expr);
     string applyIncDecExpr(IncDecExpr *id,string lvalue);
     string applyFuncCall(FuncCall *fc,const StringList &params);
+	string applyTypeConversion(TypeConversion *tc, string expr);
 };
