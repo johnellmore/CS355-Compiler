@@ -13,7 +13,7 @@ void Parser::printError(string msg) {
 }
 
 unique_ptr<Module> Parser::parseModule(unique_ptr<Module> module) {
-	LOG << "parsing module" << endl;
+	LOG << "  parsing module" << endl;
 	if (tokenizer->check(TT_END)) {
 		if (tokenizer->peek(TT_EOF)) return module;
 		else {
@@ -42,11 +42,11 @@ unique_ptr<Module> Parser::parseModule(unique_ptr<Module> module) {
 	if (tokenizer->check(TT_FUNCTION)) {
 		auto parsedFuncU = parseFunctionSignature();
 		Func* moduleFunc = parsedFuncU.release();
-		LOG << "  Finished function signature parsing" << endl;
+		LOG << "    Finished function signature parsing" << endl;
 		if (moduleFunc == NULL) return NULL;
 		
 		bool isDeclared = false;
-		LOG << "  Checking for function existence... ";
+		LOG << "    Checking for function existence... ";
 		// see if we can find this function in the list already
 		for (auto f = module->funcs.begin(); f != module->funcs.end(); f++) {
 			if (&**f == moduleFunc) { // compare the AST* of each module function to the current function
@@ -57,6 +57,7 @@ unique_ptr<Module> Parser::parseModule(unique_ptr<Module> module) {
 		}
 		// if it's a new function (not declared before), add it to the module
 		if (!isDeclared) {
+			LOG << endl;
 			unique_ptr<Func> moduleFuncP(moduleFunc);
 			module->funcs.push_back(move(moduleFuncP));
 		}
@@ -76,7 +77,7 @@ unique_ptr<Module> Parser::parseModule(unique_ptr<Module> module) {
 }
 
 unique_ptr<Func> Parser::parseFunctionSignature() {
-	LOG << "parsing function signature" << endl;
+	LOG << "  parsing function signature" << endl;
 	
 	if (tokenizer->check(TT_IDENTIFIER)) {
 		auto lastToken = tokenizer->lastToken();
@@ -118,7 +119,7 @@ unique_ptr<Func> Parser::parseFunctionSignature() {
 }
 
 unique_ptr<Func> Parser::parseFunctionBody(unique_ptr<Func> f) {
-	LOG << "parsing function body" << endl;
+	LOG << "  parsing function body" << endl;
 	
 	unique_ptr<DeclList> vars(new DeclList());
 	unique_ptr<StmtList> stmts(new StmtList());
@@ -169,7 +170,7 @@ unique_ptr<Func> Parser::parseFunctionBody(unique_ptr<Func> f) {
 }
 
 unique_ptr<DeclList> Parser::parseDeclarationList(unique_ptr<DeclList> dl) {
-	LOG << "parsing declaration list" << endl;
+	LOG << "  parsing declaration list" << endl;
 	
 	auto varDecl = parseVariableDeclaration();
 	if (varDecl == NULL) {
@@ -185,7 +186,7 @@ unique_ptr<DeclList> Parser::parseDeclarationList(unique_ptr<DeclList> dl) {
 }
 
 unique_ptr<VarDecl> Parser::parseVariableDeclaration() {
-	LOG << "parsing variable declaration" << endl;
+	LOG << "  parsing variable declaration" << endl;
 	
 	if (!tokenizer->check(TT_IDENTIFIER)) {
 		printError("variable declaration missing starting identifier");
@@ -211,7 +212,7 @@ unique_ptr<VarDecl> Parser::parseVariableDeclaration() {
 }
 
 unique_ptr<Type> Parser::parseType() {
-	LOG << "parsing type" << endl;
+	LOG << "  parsing type" << endl;
 	
 	auto scalarType = parseScalarType();
 	if (scalarType == ST_INVALID) return NULL;
@@ -245,7 +246,7 @@ unique_ptr<Type> Parser::parseType() {
 }
 
 ScalarType Parser::parseScalarType() {
-	LOG << "parsing scalar type" << endl;
+	LOG << "  parsing scalar type" << endl;
 	
 	if (tokenizer->check(TT_BOOL)) return ST_BOOL;
 	if (tokenizer->check(TT_BYTE)) return ST_BYTE;
@@ -257,7 +258,7 @@ ScalarType Parser::parseScalarType() {
 }
 
 unique_ptr<Expr> Parser::parseExpression() {
-	LOG << "parsing expression" << endl;
+	LOG << "  parsing expression" << endl;
 	
 	// all binary operators
 	if (tokenizer->check(TF_BINARY_OPERATOR)) {
@@ -295,7 +296,7 @@ unique_ptr<Expr> Parser::parseExpression() {
 		return e;
 	}
 	
-	// single things (constants, bools, l-values)
+	// primitive things (constants and bools)
 	if (tokenizer->check(TF_BOOL_CONSTANT)) {
 		Token * last = tokenizer->lastToken();
 		unique_ptr<Expr> c(new Constant(tokenizer->currentPosition(), last->getValue(), last->getScalarType()));
@@ -326,7 +327,7 @@ unique_ptr<Expr> Parser::parseExpression() {
 }
 
 unique_ptr<LValue> Parser::parseLValue() {
-	LOG << "parsing l-value" << endl;
+	LOG << "  parsing l-value" << endl;
 	
 	if (tokenizer->peek(TT_IDENTIFIER)) {
 		if (!tokenizer->check(TF_VARIABLE)) {
@@ -355,7 +356,7 @@ unique_ptr<LValue> Parser::parseLValue() {
 }
 
 unique_ptr<ExprList> Parser::parseParameterList(unique_ptr<ExprList> pl) {
-	LOG << "parsing parameter list" << endl;
+	LOG << "  parsing parameter list" << endl;
 	
 	if (tokenizer->check(TT_BANG)) return pl;
 	
@@ -378,7 +379,7 @@ unique_ptr<ExprList> Parser::parseParameterList(unique_ptr<ExprList> pl) {
 }
 
 unique_ptr<StmtList> Parser::parseStatementList(unique_ptr<StmtList> sl) {
-	LOG << "parsing statement list" << endl;
+	LOG << "  parsing statement list" << endl;
 	
 	unique_ptr<Stmt> s(parseStatement());
 	if (s == NULL) return NULL;
@@ -395,7 +396,7 @@ unique_ptr<StmtList> Parser::parseStatementList(unique_ptr<StmtList> sl) {
 }
 
 unique_ptr<Stmt> Parser::parseStatement() {
-	LOG << "parsing statement" << endl;
+	LOG << "  parsing statement" << endl;
 	
 	// set LV E
 	if (tokenizer->check(TT_SET)) {

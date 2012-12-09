@@ -198,9 +198,10 @@ public:
 
 class Constant : public Expr {
 public:
-	Constant(const Position &p,int v,ScalarType t) : Expr(p),value(v), type(t) { }
+	Constant(const Position &p,int v,ScalarType t);
 	virtual string apply(Visitor &v);
-	ScalarType getType() const;    
+	ScalarType getType() const;
+	bool convertibleTo(ScalarType t);
 	
 	int                         value;
 	ScalarType                  type;
@@ -236,9 +237,9 @@ public:
 	ExprList                    params;
 };
 
-class TypeConversion : public AST {
+class TypeConversion : public Expr {
 public:
-	TypeConversion(ScalarType to) : AST(Position(0, 0)), output(to) { }
+	TypeConversion(ScalarType to,unique_ptr<Expr> e) : Expr(Position(0, 0)), output(to), expr(move(e)) { }
 	virtual string apply(Visitor &v);
 	ScalarType getType() const { return output; }
 	

@@ -125,6 +125,6 @@ string Dump::indent(string s) {
 }
 
 string Dump::applyTypeConversion(TypeConversion *tc,string expr) {
-	return "Type Conversion:\n"
+	return "Type Conversion (into " + typeName[tc->output] + "):\n"
 		+  indent(expr);
 }

@@ -248,7 +248,7 @@ void Tokenizer::pushToken(const string &text, TokenType type, TokenFlag flags) {
 	symbols.push_front(move(thisToken));
 	currentToken = &(**symbols.begin());
 	
-	LOG << "Token: " << "\"" << text << "\"" << " of type:" << type << " flag:" << flags << " @ " << position.toString() << endl;
+	LOG << "  Token: " << "\"" << text << "\"" << " of type:" << type << " flag:" << flags << " @ " << position.toString() << endl;
 }
 
 Token * Tokenizer::findSymbol(string name) {

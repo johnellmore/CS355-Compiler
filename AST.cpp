@@ -91,13 +91,15 @@ string ConditionalStmt::apply(Visitor &v) {
 	return v.applyConditionalStmt(this,thenStmtResults,elseStmtResults,conditionalExpr->apply(v));
 }
 
+
+// Expr ---------------------------------------
 bool Expr::convertibleTo(ScalarType t) {
 	ScalarType myType = getType();
 	assert(myType>=ST_BOOL && myType<=ST_LONG);
 	if (t==ST_BOOL)
 		return myType==ST_BOOL;
 	return myType>=ST_BYTE && myType<=t; 
-}    
+}
 
 
 // UnaryExpr --------------------------------
@@ -106,28 +108,43 @@ string UnaryExpr::apply(Visitor &v) {
 }
 
 ScalarType UnaryExpr::getType() const {
-	return expr->getType();
-}    
-
+	if (oper == TT_NOT)
+		return ST_BOOL;
+	else if (oper == TT_NEG)
+		return expr->getType();
+	return ST_INVALID;
+}
+ 
 // BinaryExpr --------------------------------
 string BinaryExpr::apply(Visitor &v) {
 	return v.applyBinaryExpr(this,leftExpr->apply(v),rightExpr->apply(v));
 }
 
 ScalarType BinaryExpr::getType() const {
-	if (oper>=TT_AND)
+	if (oper >= TT_LESS_THAN)
 		return ST_BOOL;
 	return (ScalarType)max(leftExpr->getType(),rightExpr->getType());
-}    
+}
 
 // Constant --------------------------------
+Constant::Constant(const Position &p, int v, ScalarType t)
+: Expr(p),value(v), type(t) {
+	if (t == ST_LONG) {
+		if (v < 0) type = ST_INVALID;
+		else if (v <= 127) type = ST_BYTE;
+		else if (v <= 32767) type = ST_SHORT;
+		else if (v <= 2147483647) type = ST_LONG;
+		else type = ST_INVALID;
+	}
+}
+
 string Constant::apply(Visitor & v) {
 	return v.applyConstant(this);
 }
 
 ScalarType Constant::getType() const {
 	return type;
-}    
+}
 
 // LValue --------------------------------
 string LValue::apply(Visitor & v) {
@@ -136,7 +153,7 @@ string LValue::apply(Visitor & v) {
 
 ScalarType LValue::getType() const {
 	return name->getScalarType();
-}    
+}
 
 // IncDecExpr --------------------------------
 string IncDecExpr::apply(Visitor & v) {
@@ -145,7 +162,7 @@ string IncDecExpr::apply(Visitor & v) {
 
 ScalarType IncDecExpr::getType() const {
 	return lvalue->getType();
-}    
+}
 
 // FuncCall --------------------------------
 FuncCall::FuncCall(const Position &p,Token *i,unique_ptr<ExprList> pl) 

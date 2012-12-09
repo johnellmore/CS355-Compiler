@@ -8,7 +8,7 @@ enum TokenType {
 	TT_BYTE, 
 	TT_SHORT, 
 	TT_LONG,
-
+	
 	TT_PLUS,
 	TT_MINUS,
 	TT_MULTIPLY,
