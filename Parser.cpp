@@ -104,7 +104,6 @@ unique_ptr<Func> Parser::parseFunctionSignature() {
 			
 			if (!isDefined) {
 				func.reset(new Func(tokenizer->currentPosition(), lastToken, type, move(dl)));
-				lastToken->setDeclaration(&*func);
 			} else {
 				func.reset((Func*)lastToken->getDeclaration());
 			}
@@ -221,7 +220,7 @@ unique_ptr<Type> Parser::parseType() {
 	// check if this is an array declaration
 	if (tokenizer->check(TT_OPEN_ARRAY)) {
 		if (!tokenizer->check(TT_CONSTANT)) {
-			printError("expected constant for array length");
+			printError("expected numeric constant for array length");
 			return NULL;
 		}
 		
@@ -336,19 +335,19 @@ unique_ptr<LValue> Parser::parseLValue() {
 		}
 		
 		Token * ident = tokenizer->lastToken();
-		unique_ptr<Expr> e;
+		unique_ptr<LValue> l;
 		if (tokenizer->check(TT_OPEN_ARRAY)) {
 			// there's an array index here
-			e = parseExpression();
+			unique_ptr<Expr> e = parseExpression();
 			if (e == NULL) return NULL;
 			if (!tokenizer->check(TT_CLOSE_ARRAY)) {
 				printError("expected array close bracket");
 				return NULL;
 			}
+			l.reset(new LValue(tokenizer->currentPosition(), ident, move(e)));
 		} else {
-			e.reset(new Constant(tokenizer->currentPosition(), 0, ST_LONG));
+			l.reset(new LValue(tokenizer->currentPosition(), ident, NULL));
 		}
-		unique_ptr<LValue> l(new LValue(tokenizer->currentPosition(), ident, move(e)));
 		return l;
 	}
 	printError("expected identifier");

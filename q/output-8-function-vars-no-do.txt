@@ -1,0 +1,24 @@
+Setup...
+  Token: "function" of type:25 flag:0 @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "something" of type:42 flag:0 @ L1C18
+  parsing function signature
+  Token: ":" of type:37 flag:0 @ L1C19
+    function set on: something
+  Token: "bool" of type:2 flag:1 @ L1C23
+  parsing scalar type
+  Token: "vars" of type:26 flag:0 @ L2C8
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "awesome" of type:42 flag:0 @ L2C16
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" of type:37 flag:0 @ L2C17
+  Token: "short" of type:4 flag:1 @ L2C22
+  parsing type
+  parsing scalar type
+  Token: "return" of type:28 flag:0 @ L3C10
+    variable set on: awesome

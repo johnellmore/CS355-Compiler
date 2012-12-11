@@ -96,7 +96,7 @@ public:
 	void				setAsFunction();
 	void				setAsVariable(int size);
 	
-	void				setDeclaration(AST * decl) { declaration = decl; };
+	void				setDeclaration(AST * decl) { if (!declaration) declaration = decl; };
 	AST *				getDeclaration() { return declaration; };
 	
 private:

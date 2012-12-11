@@ -1,0 +1,19 @@
+Setup...
+  Token: "vars" of type:26 flag:0 @ L1C4
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "x" of type:42 flag:0 @ L1C6
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" of type:37 flag:0 @ L1C7
+  Token: "bool" of type:2 flag:1 @ L1C11
+  parsing type
+  parsing scalar type
+  Token: "end" of type:29 flag:0 @ L1C15
+    variable set on: x
+  Token: "function" of type:25 flag:0 @ L3C8
+  parsing module
+  parsing function signature
+  Token: ":" of type:37 flag:0 @ L3C11
+    Finished function signature parsing

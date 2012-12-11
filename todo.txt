@@ -1,7 +1,0 @@
-Type Checker checks:
-- size of constants not overflowing
-- function calls match function arguments (access params by going token->ast->params)
-- binary expressions need compatible parameters
-- make sure unary expressions have the correct type (bool vs. numeric)
-
-- define getType functions for functions

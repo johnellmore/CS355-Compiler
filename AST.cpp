@@ -152,6 +152,7 @@ string LValue::apply(Visitor & v) {
 }
 
 ScalarType LValue::getType() const {
+	//cout << "Getting type of " << name->getText() << "..." << endl;
 	return name->getScalarType();
 }
 

@@ -25,7 +25,10 @@ function increment:short number:short do
 == make sure that we can add later variables to the module global vars
 vars y:long end
 
-== now just a declaration (also tries fake-out identifiers which start with keywords)
+== another declaration (also tries fake-out identifiers which start with keywords)
 function andtest:bool something:bool end
+
+function andtest:bool something:bool 
+	return something
 
 end

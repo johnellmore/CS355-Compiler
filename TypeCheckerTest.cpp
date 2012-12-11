@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 	
 	cout << "Parsing... " << endl;
 	if (!p.parse(&t)) {
-		cerr << endl << "Parsing failed." << endl;
+		cerr << "Parsing failed." << endl;
 		return 0;
 	}
 	file.close(); // close our input file
@@ -38,8 +38,8 @@ int main(int argc, char *argv[]) {
 	cout << "Running type checker... " << endl;
 	auto tcReturn = m->apply(tc);
 	if (tcReturn.size()) { // a non-empty return string means an error occurred
-		cerr << endl << "Type checking failed." << endl;
-		return 0;
+		cerr << "Type checking failed." << endl;
+		//return 0;
 	}
 	cout << "Type checker succeeded." << endl;
 	

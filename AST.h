@@ -46,7 +46,7 @@ public:
 	virtual string applyIncDecExpr(IncDecExpr *id,string lvalue) = 0;
 	virtual string applyFuncCall(FuncCall *fc,const StringList &params) = 0;
 	virtual string applyTypeConversion(TypeConversion *tc, string expr) = 0;
-
+	
 protected:
 	static string concatenate(const StringList &strings);
 };
@@ -60,7 +60,7 @@ class AST {
 public:
 	AST(const Position &pos) : position(pos) { }
 	virtual ~AST();
-
+	
 	virtual string apply(Visitor &visitor) = 0;
 		
 	const Position &location()                  const { return position; }
@@ -85,7 +85,7 @@ class Type : public AST {
 public:
 	Type(const Position &p,ScalarType st,int s) :AST(p),type(st),size(s) { }
 	virtual string apply(Visitor &v) { return v.applyType(this); }
-
+	
 	ScalarType                  type;
 	int                         size;  // 0 if scalartype, else size of array
 };
@@ -94,7 +94,7 @@ class Module : public AST {
 public:
 	Module(const Position &p) : AST(p) {}
 	virtual string apply(Visitor &v);
-
+	
 	DeclList                    vars;
 	FuncList                    funcs;
 };
@@ -117,7 +117,7 @@ public:
 	Token *                     name;
 	ScalarType                  type;
 	DeclList                    params;
-
+	
 	DeclList                    vars;       // empty if only a declaration
 	StmtList                    stmts;      // empty if only a declaration
 	unique_ptr<Expr>            returnExpr; // null  if only a declaration
@@ -133,7 +133,7 @@ class ExprStmt : public Stmt {
 public:
 	ExprStmt(const Position &p,unique_ptr<Expr> e) : Stmt(p),expr(move(e)) {}
 	virtual string apply(Visitor &v);
-
+	
 	unique_ptr<Expr>            expr;
 };
 
@@ -142,7 +142,7 @@ public:
 	AssignmentStmt(const Position &p,unique_ptr<LValue> lv,unique_ptr<Expr> e) 
 		: Stmt(p),lvalue(move(lv)), expr(move(e)) { }
 	virtual string apply(Visitor &v);
-
+	
 	unique_ptr<LValue>          lvalue;
 	unique_ptr<Expr>            expr;
 };
@@ -151,7 +151,7 @@ class LoopStmt : public Stmt {
 public:
 	LoopStmt(const Position &p,unique_ptr<Expr> e,unique_ptr<StmtList> sl) : Stmt(p), expr(move(e)) { stmts.swap(*sl); } 
 	virtual string apply(Visitor &v);
-
+	
 	unique_ptr<Expr>            expr;
 	StmtList                    stmts;
 };
@@ -161,7 +161,7 @@ public:
 	ConditionalStmt(const Position &p,unique_ptr<Expr> ce,unique_ptr<StmtList> ts,unique_ptr<StmtList> es) 
 		: Stmt(p), conditionalExpr(move(ce)) { thenStmts.swap(*ts); if (es) elseStmts.swap(*es); }
 	virtual string apply(Visitor &v);
-
+	
 	unique_ptr<Expr>            conditionalExpr;
 	StmtList                    thenStmts;
 	StmtList                    elseStmts;  // empty if no else stmts

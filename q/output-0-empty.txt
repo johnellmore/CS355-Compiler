@@ -1,3 +1,13 @@
+Setup...
+  Token: "end" of type:29 flag:0 @ L1C3
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "ÿ" of type:1 flag:0 @ L2C1
 Parsing succeeded.
+Running type checker... 
+Type checker succeeded.
+Dumping AST...
 Module variables:
 Module functions:
+AST dumped.

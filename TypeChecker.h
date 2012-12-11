@@ -18,4 +18,6 @@ public:
 	string applyIncDecExpr(IncDecExpr *id,string lvalue);
 	string applyFuncCall(FuncCall *fc,const StringList &params);
 	string applyTypeConversion(TypeConversion *tc, string expr);
+private:
+	bool checkIsFullArray(Expr * e);
 };
