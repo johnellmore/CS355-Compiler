@@ -6,21 +6,21 @@ Running type checker...
 Type checker succeeded.
 Dumping AST...
 Module variables:
-|  x : bool
-|  y : long
+|  x(0) : bool
+|  y(0) : long
 Module functions:
-|  increment : short definition
+|  increment : short definition (scope 1)
 |  |  Parameters:
-|  |  |  number : short
+|  |  |  number(1) : short
 |  |  Statements:
 |  |  |  Expression statement:
 |  |  |  |  Decrement expression:
-|  |  |  |  |  L-Value: number
+|  |  |  |  |  L-Value: number(1)
 |  |  |  Expression statement:
 |  |  |  |  Increment expression:
-|  |  |  |  |  L-Value: number
+|  |  |  |  |  L-Value: number(1)
 |  |  |  Assignment statement:
-|  |  |  |  L-Value: number
+|  |  |  |  L-Value: number(1)
 |  |  |  |  Expression:
 |  |  |  |  |  Binary + expression:
 |  |  |  |  |  |  Left expression:
@@ -29,77 +29,77 @@ Module functions:
 |  |  |  |  |  |  |  |  |  Type Conversion (into short):
 |  |  |  |  |  |  |  |  |  |  Constant: 1 : byte
 |  |  |  |  |  |  |  |  Right expression:
-|  |  |  |  |  |  |  |  |  L-Value: number
+|  |  |  |  |  |  |  |  |  L-Value: number(1)
 |  |  |  |  |  |  Right expression:
 |  |  |  |  |  |  |  Type Conversion (into short):
 |  |  |  |  |  |  |  |  Constant: 2 : byte
 |  |  Return expression:
-|  |  |  L-Value: number
-|  sum : long definition
+|  |  |  L-Value: number(1)
+|  sum : long definition (scope 2)
 |  |  Parameters:
-|  |  |  in : long[100]
-|  |  |  size : byte
+|  |  |  input(2) : long[100]
+|  |  |  size(2) : byte
 |  |  Local variables:
-|  |  |  total : long
-|  |  |  j : byte
+|  |  |  total(2) : long
+|  |  |  i(2) : byte
 |  |  Statements:
 |  |  |  Assignment statement:
-|  |  |  |  L-Value: j
+|  |  |  |  L-Value: i(2)
 |  |  |  |  Expression:
 |  |  |  |  |  Constant: 0 : byte
 |  |  |  Loop statement:
 |  |  |  |  Expression:
 |  |  |  |  |  Binary < expression:
 |  |  |  |  |  |  Left expression:
-|  |  |  |  |  |  |  L-Value: j
+|  |  |  |  |  |  |  L-Value: i(2)
 |  |  |  |  |  |  Right expression:
-|  |  |  |  |  |  |  L-Value: size
+|  |  |  |  |  |  |  L-Value: size(2)
 |  |  |  |  Statements:
 |  |  |  |  |  Assignment statement:
-|  |  |  |  |  |  L-Value: total
+|  |  |  |  |  |  L-Value: total(2)
 |  |  |  |  |  |  Expression:
 |  |  |  |  |  |  |  Binary + expression:
 |  |  |  |  |  |  |  |  Left expression:
-|  |  |  |  |  |  |  |  |  L-Value: total
+|  |  |  |  |  |  |  |  |  L-Value: total(2)
 |  |  |  |  |  |  |  |  Right expression:
-|  |  |  |  |  |  |  |  |  L-Value: in
+|  |  |  |  |  |  |  |  |  L-Value: input(2)
 |  |  |  |  |  |  |  |  |  |  Index:
 |  |  |  |  |  |  |  |  |  |  |  Increment expression:
-|  |  |  |  |  |  |  |  |  |  |  |  L-Value: j
+|  |  |  |  |  |  |  |  |  |  |  |  L-Value: i(2)
 |  |  Return expression:
-|  |  |  L-Value: total
-|  addthree : long definition
+|  |  |  L-Value: total(2)
+|  addthree : long definition (scope 3)
 |  |  Parameters:
-|  |  |  n1 : long
-|  |  |  n2 : long
-|  |  |  n3 : long
+|  |  |  n1(3) : long
+|  |  |  n2(3) : long
+|  |  |  n3(3) : long
 |  |  Local variables:
-|  |  |  arr : long[100]
+|  |  |  arr(3) : long[100]
 |  |  Statements:
 |  |  |  Assignment statement:
-|  |  |  |  L-Value: arr
+|  |  |  |  L-Value: arr(3)
 |  |  |  |  |  Index:
 |  |  |  |  |  |  Constant: 0 : byte
 |  |  |  |  Expression:
-|  |  |  |  |  L-Value: n1
+|  |  |  |  |  L-Value: n1(3)
 |  |  |  Assignment statement:
-|  |  |  |  L-Value: arr
+|  |  |  |  L-Value: arr(3)
 |  |  |  |  |  Index:
 |  |  |  |  |  |  Constant: 1 : byte
 |  |  |  |  Expression:
-|  |  |  |  |  L-Value: n2
+|  |  |  |  |  L-Value: n2(3)
 |  |  |  Assignment statement:
-|  |  |  |  L-Value: arr
+|  |  |  |  L-Value: arr(3)
 |  |  |  |  |  Index:
 |  |  |  |  |  |  Constant: 2 : byte
 |  |  |  |  Expression:
-|  |  |  |  |  L-Value: n3
+|  |  |  |  |  L-Value: n3(3)
 |  |  Return expression:
 |  |  |  Function call to sum:
 |  |  |  |  Parameters:
-|  |  |  |  |  L-Value: arr
+|  |  |  |  |  L-Value: arr(3)
 |  |  |  |  |  Constant: 3 : byte
-|  thethree : long definition
+|  thethree : long definition (scope 4)
 |  |  Return expression:
 |  |  |  Function call to addthree:
 |  |  |  |  Parameters:
@@ -108,27 +108,27 @@ Module functions:
 |  |  |  |  |  Type Conversion (into long):
 |  |  |  |  |  |  Constant: 2222 : short
 |  |  |  |  |  Constant: 331000 : long
-|  negate : long definition
+|  negate : long definition (scope 5)
 |  |  Parameters:
-|  |  |  input : long
+|  |  |  input(5) : long
 |  |  Return expression:
 |  |  |  Unary neg expression:
-|  |  |  |  L-Value: input
-|  position : long definition
+|  |  |  |  L-Value: input(5)
+|  position : long definition (scope 6)
 |  |  Parameters:
-|  |  |  needle : short
-|  |  |  haystack : short[10]
+|  |  |  needle(6) : short
+|  |  |  haystack(6) : short[10]
 |  |  Local variables:
-|  |  |  i : short
-|  |  |  found : bool
+|  |  |  i(6) : short
+|  |  |  found(6) : bool
 |  |  Statements:
 |  |  |  Assignment statement:
-|  |  |  |  L-Value: i
+|  |  |  |  L-Value: i(6)
 |  |  |  |  Expression:
 |  |  |  |  |  Type Conversion (into short):
 |  |  |  |  |  |  Constant: 0 : byte
 |  |  |  Assignment statement:
-|  |  |  |  L-Value: found
+|  |  |  |  L-Value: found(6)
 |  |  |  |  Expression:
 |  |  |  |  |  Constant: 1 : bool
 |  |  |  Loop statement:
@@ -137,14 +137,14 @@ Module functions:
 |  |  |  |  |  |  Left expression:
 |  |  |  |  |  |  |  Binary < expression:
 |  |  |  |  |  |  |  |  Left expression:
-|  |  |  |  |  |  |  |  |  L-Value: i
+|  |  |  |  |  |  |  |  |  L-Value: i(6)
 |  |  |  |  |  |  |  |  Right expression:
 |  |  |  |  |  |  |  |  |  Type Conversion (into short):
 |  |  |  |  |  |  |  |  |  |  Constant: 10 : byte
 |  |  |  |  |  |  Right expression:
 |  |  |  |  |  |  |  Binary = expression:
 |  |  |  |  |  |  |  |  Left expression:
-|  |  |  |  |  |  |  |  |  L-Value: found
+|  |  |  |  |  |  |  |  |  L-Value: found(6)
 |  |  |  |  |  |  |  |  Right expression:
 |  |  |  |  |  |  |  |  |  Constant: 1 : bool
 |  |  |  |  Statements:
@@ -152,34 +152,34 @@ Module functions:
 |  |  |  |  |  |  Expression:
 |  |  |  |  |  |  |  Binary = expression:
 |  |  |  |  |  |  |  |  Left expression:
-|  |  |  |  |  |  |  |  |  L-Value: haystack
+|  |  |  |  |  |  |  |  |  L-Value: haystack(6)
 |  |  |  |  |  |  |  |  |  |  Index:
-|  |  |  |  |  |  |  |  |  |  |  L-Value: i
+|  |  |  |  |  |  |  |  |  |  |  L-Value: i(6)
 |  |  |  |  |  |  |  |  Right expression:
-|  |  |  |  |  |  |  |  |  L-Value: needle
+|  |  |  |  |  |  |  |  |  L-Value: needle(6)
 |  |  |  |  |  |  Then statements:
 |  |  |  |  |  |  |  Assignment statement:
-|  |  |  |  |  |  |  |  L-Value: found
+|  |  |  |  |  |  |  |  L-Value: found(6)
 |  |  |  |  |  |  |  |  Expression:
 |  |  |  |  |  |  |  |  |  Unary not expression:
 |  |  |  |  |  |  |  |  |  |  Constant: 1 : bool
 |  |  |  |  |  |  Else statements:
 |  |  |  |  |  |  |  Assignment statement:
-|  |  |  |  |  |  |  |  L-Value: i
+|  |  |  |  |  |  |  |  L-Value: i(6)
 |  |  |  |  |  |  |  |  Expression:
 |  |  |  |  |  |  |  |  |  Function call to increment:
 |  |  |  |  |  |  |  |  |  |  Parameters:
-|  |  |  |  |  |  |  |  |  |  |  L-Value: i
+|  |  |  |  |  |  |  |  |  |  |  L-Value: i(6)
 |  |  Return expression:
 |  |  |  Unary neg expression:
 |  |  |  |  Function call to negate:
 |  |  |  |  |  Parameters:
 |  |  |  |  |  |  Type Conversion (into long):
-|  |  |  |  |  |  |  L-Value: i
-|  andtest : short definition
+|  |  |  |  |  |  |  L-Value: i(6)
+|  andtest : short definition (scope 8)
 |  |  Parameters:
-|  |  |  something : byte
+|  |  |  something(8) : byte
 |  |  Return expression:
 |  |  |  Type Conversion (into short):
-|  |  |  |  L-Value: something
+|  |  |  |  L-Value: something(8)
 AST dumped.

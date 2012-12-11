@@ -80,14 +80,14 @@ class AST;
 
 class Token {
 public:
-	Token(const string &text,TokenType type);
-	Token(const string &text,TokenType type,TokenFlag flags);
+	Token(const string &ntext, TokenType ntype, unsigned int s, TokenFlag nflags);
 	
 	TokenType			getType()		const { return type; }
 	const string &		getText()		const { return text; }
 	
 	bool				hasAttribute(TokenFlag bit) const { return flags & bit; }
 	
+	unsigned int		getScope()		const { return scope; }
 	int					getValue()		const;
 	ScalarType			getScalarType()	const;
 	bool				getBoolValue()	const;

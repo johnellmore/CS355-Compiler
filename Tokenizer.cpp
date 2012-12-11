@@ -91,9 +91,9 @@ bool Tokenizer::check(TokenFlag expected) {
 
 void Tokenizer::debugSymbols() {
 	LOG << "Tokenizer Symbol Table:" << endl;
-	for (auto it = symbols.begin(); it != symbols.end(); it++) {
-		if ((*it)->getType() != 42) continue;
-		LOG << "  " << (*it)->getText() << " " << (*it)->getType() << endl;
+	for (auto t = symbols.begin(); t != symbols.end(); t++) {
+		if ((*t)->getType() != 42) continue;
+		LOG << "  " << (*t)->getText() << " [" << (*t)->getType() << ", " << (*t)->getScope() << "]" << endl;
 	}
 }
 
@@ -221,7 +221,7 @@ void Tokenizer::pushToken(const string &text, TokenType type, TokenFlag flags) {
 	// if the token has already been referred to, just return away
 	if (type == TT_IDENTIFIER) {
 		// check if the symbol was found
-		currentToken = findSymbol(text);
+		currentToken = findSymbol(text, curScope);
 		if (currentToken != NULL) return;
 	}
 	
@@ -252,16 +252,24 @@ void Tokenizer::pushToken(const string &text, TokenType type, TokenFlag flags) {
 		type == TT_FALSE) flags = (TokenFlag)(TF_BOOL_CONSTANT | flags);
 	
 	// add the new token to the symbol table
-	unique_ptr<Token> thisToken(new Token(text, type, flags));
+	unique_ptr<Token> thisToken(new Token(text, type, curScope, flags));
 	symbols.push_front(move(thisToken));
 	currentToken = &(**symbols.begin());
 	
-	LOG << "  Token: " << "\"" << text << "\"" << " of type:" << type << " flag:" << flags << " @ " << position.toString() << endl;
+	LOG << "  Token: " << "\"" << text << "\"" << " [type:" << type << ", flag:" << flags << ", scope:" << curScope << "] @ " << position.toString() << endl;
 }
 
-Token * Tokenizer::findSymbol(string name) {
+Token * Tokenizer::findSymbol(string name, unsigned int s) {
+	Token * globalVar = NULL;
 	for (auto it = symbols.begin(); it != symbols.end(); it++) {
-		if ((*it)->getType() == TT_IDENTIFIER && (*it)->getText() == name) return &(**it);
+		auto t = &**it;
+		if (t->getType() == TT_IDENTIFIER && t->getText() == name) {
+			if (t->getScope() == s || t->hasAttribute(TF_FUNCTION)) {
+				return t;
+			} else if (t->getScope() == 0) {
+				globalVar = t;
+			}
+		}
 	}
-	return NULL;
+	return globalVar;
 }

@@ -148,8 +148,11 @@ echo "  Testing TC Error 16: Function call parameter requires array, single give
 echo "  Testing TC Error 17: Function call parameter requires single, array given"
 ./a.out q/tc-17-funccall-array-param-given.q > q/output-tc-17-funccall-array-param-given.txt
 
-echo "  Testing TC Error 18: FUnction call array size mismatch"
+echo "  Testing TC Error 18: Function call array size mismatch"
 ./a.out q/tc-18-funccall-param-array-size.q > q/output-tc-18-funccall-param-array-size.txt
+
+echo "  Testing TC Error 19: Function variable redeclaration (param vs. local)"
+./a.out q/tc-19-function-var-redeclaration.q > q/output-tc-19-function-var-redeclaration.txt
 
 
 

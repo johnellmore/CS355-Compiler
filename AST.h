@@ -102,9 +102,12 @@ public:
 class VarDecl : public AST {
 public:
 	VarDecl(const Position &p,Token *_name,unique_ptr<Type> _type);
+	void setScope(const unsigned int s) { scope = s; };
+	unsigned int getScope() const { return scope; };
 	virtual string apply(Visitor &v);
 	
 	Token *                     name;
+	unsigned int				scope;
 	unique_ptr<Type>            type;
 };
 
@@ -112,9 +115,12 @@ class Func : public AST {
 public:
 	Func(const Position &p,Token *i,ScalarType st,unique_ptr<DeclList> dl);
 	void define(unique_ptr<DeclList> v, unique_ptr<StmtList> s, unique_ptr<Expr> e);
+	void setScope(const unsigned int s) { scope = s; };
+	unsigned int getScope() const { return scope; };
 	virtual string apply(Visitor &v);
 	
 	Token *                     name;
+	unsigned int				scope;
 	ScalarType                  type;
 	DeclList                    params;
 	

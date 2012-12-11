@@ -39,6 +39,17 @@ string TypeChecker::applyFunc(Func *func,const StringList &params,const StringLi
 		return "error";
 	}
 	
+	// check that a local var doesn't redeclare a parameter
+	for (auto p = func->params.begin(); p != func->params.end(); p++) {
+		for (auto l = func->vars.begin(); l != func->vars.end(); l++) {
+			// see if this var == this local var (check by pointer to Token)
+			if ((*p)->name == (*l)->name) {
+				printError(func, "local var declaration overlaps parameter declaration");
+				return "error";
+			}
+		}
+	}
+	
 	// check that the return value is the correct type
 	auto returnType = func->returnExpr->getType();
 	if (funcType == returnType) {

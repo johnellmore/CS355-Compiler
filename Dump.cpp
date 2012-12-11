@@ -20,16 +20,17 @@ string Dump::applyModule(Module *,const StringList &vars,const StringList &funcs
 }
 
 string Dump::applyVarDecl(VarDecl *vd,string type) {
-	return vd->name->getText() + " : " + type + "\n";
+	return vd->name->getText() + "(" + scopeStr(vd->name->getScope()) + ") : " + type + "\n";
 }
 
 string Dump::applyFunc(Func *f,const StringList &params,const StringList &vars,const StringList &stmts,string expr) {
 	stringstream os;
 	os << f->name->getText() << " : " << typeName[f->type];
 	if (f->returnExpr)
-		os << " definition\n";
+		os << " definition";
 	else
-		os << " declaration\n";
+		os << " declaration";
+	os << " (scope " << f->getScope() << ")\n";
 	if (f->params.size())
 		os << indent("Parameters:\n") << indent(indent(concatenate(params)));
 	if (f->vars.size())
@@ -92,7 +93,7 @@ string Dump::applyConstant(Constant *c) {
 }
 
 string Dump::applyLValue(LValue *lvalue,string index) {
-	string result = "L-Value: " + lvalue->name->getText() + "\n";
+	string result = "L-Value: " + lvalue->name->getText() + "(" + scopeStr(lvalue->name->getScope()) + ")\n";
 	if (lvalue->index)
 		result += indent("Index:\n")
 				+ indent(indent(index)); 
@@ -113,6 +114,11 @@ string Dump::applyFuncCall(FuncCall *call,const StringList &params) {
 	return result;
 }
 
+string Dump::applyTypeConversion(TypeConversion *tc,string expr) {
+	return "Type Conversion (into " + typeName[tc->output] + "):\n"
+		+  indent(expr);
+}
+
 string Dump::indent(string s) {
 	string output;
 	for (unsigned int i = 0; i < s.size(); i++) {
@@ -124,7 +130,8 @@ string Dump::indent(string s) {
 	return output;
 }
 
-string Dump::applyTypeConversion(TypeConversion *tc,string expr) {
-	return "Type Conversion (into " + typeName[tc->output] + "):\n"
-		+  indent(expr);
+string Dump::scopeStr(unsigned int s) {
+	stringstream str;
+	str << s;
+	return str.str();
 }

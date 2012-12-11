@@ -1,7 +1,7 @@
 #include "Compiler.h"
 
-Token::Token(const string &ntext, TokenType ntype, TokenFlag nflags) :
-	text(ntext), type(ntype), flags(nflags), declaration(NULL) {}
+Token::Token(const string &ntext, TokenType ntype, unsigned int s, TokenFlag nflags) :
+	text(ntext), type(ntype), flags(nflags), scope(s), declaration(NULL) {}
 
 int Token::getValue() const {
 	if (type == TT_CONSTANT) {

@@ -26,9 +26,10 @@ public:
 	bool			check(TokenFlag expected);
 	
 	// scoping 
+	unsigned int	newScope() { return nextScope++; };
 	unsigned int	getScope() const { return curScope; };
-	unsigned int	focusScope() { curScope = nextScope++; return curScope; };
-	void			blurScope() { curScope = 0; }
+	void			setScope(unsigned int s) { curScope = s; };
+	void			endScope() { curScope = 0; }
 	
 	Token *			lastToken()         const { assert(previousToken); return previousToken; }
 	
@@ -46,8 +47,7 @@ private:
 	static bool 	isConstantChar(const char test);
 	
 	void 			pushToken(const string &text, TokenType type, TokenFlag flags=TF_NONE);
-	void 			pushSymbol(string name);
-	Token *			findSymbol(string name);
+	Token *			findSymbol(string name, unsigned int s);
 	
 	Position		position;
 	string			lineBuffer;

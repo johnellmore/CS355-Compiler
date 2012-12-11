@@ -19,4 +19,5 @@ public:
 	string applyTypeConversion(TypeConversion *tc, string expr);
 protected:
 	static string indent(string s);
+	static string scopeStr(unsigned int s);
 };

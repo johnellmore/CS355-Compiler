@@ -2,12 +2,12 @@ function increment:short number:short end
 == this is a comment in the file
 vars x:bool end
 
-function sum:long in:long[100] ; size:byte
-vars total:long ; j:byte do
-	set j 0 ;
+function sum:long input:long[100] ; size:byte
+vars total:long ; i:byte do
+	set i 0 ;
 	{
-		set total + total in[++j]
-	} ^ < j size
+		set total + total input[++i]
+	} ^ < i size
 	return total
 
 function addthree:long n1:long ; n2:long ; n3: long

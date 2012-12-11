@@ -49,6 +49,6 @@ int main(int argc, char *argv[]) {
 	cout << m->apply(d);
 	cout << "AST dumped." << endl;
 	
-	//LOG << endl << endl;
-	//t.printSymbols();
+	LOG << endl;
+	t.debugSymbols();
 }

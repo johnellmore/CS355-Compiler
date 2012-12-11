@@ -39,7 +39,12 @@ unique_ptr<Module> Parser::parseModule(unique_ptr<Module> module) {
 	}
 	
 	// parse module functions
-	if (tokenizer->check(TT_FUNCTION)) {
+	if (tokenizer->peek(TT_FUNCTION)) {
+		// set up the scope for this function
+		auto s = tokenizer->newScope();
+		tokenizer->setScope(s);
+		tokenizer->nextToken();
+		
 		auto parsedFuncU = parseFunctionSignature();
 		Func* moduleFunc = parsedFuncU.release();
 		LOG << "    Finished function signature parsing" << endl;
@@ -68,6 +73,7 @@ unique_ptr<Module> Parser::parseModule(unique_ptr<Module> module) {
 			return NULL;
 		}
 		moduleFuncP.release();
+		tokenizer->endScope();
 		
 		return parseModule(move(module));
 	}
@@ -86,6 +92,9 @@ unique_ptr<Func> Parser::parseFunctionSignature() {
 			return NULL;
 		}
 		bool isDefined = lastToken->hasAttribute(TF_FUNCTION);
+		if (isDefined) {
+			tokenizer->setScope(((Func*)lastToken->getDeclaration())->getScope());
+		}
 		
 		// set the token as a function identifier
 		lastToken->setAsFunction();
@@ -104,6 +113,7 @@ unique_ptr<Func> Parser::parseFunctionSignature() {
 			
 			if (!isDefined) {
 				func.reset(new Func(tokenizer->currentPosition(), lastToken, type, move(dl)));
+				func->setScope(tokenizer->getScope());
 			} else {
 				func.reset((Func*)lastToken->getDeclaration());
 			}
@@ -206,6 +216,7 @@ unique_ptr<VarDecl> Parser::parseVariableDeclaration() {
 	
 	thisVar->setAsVariable(type->size);
 	unique_ptr<VarDecl> var(new VarDecl(tokenizer->currentPosition(), thisVar, move(type)));
+	var->setScope(tokenizer->getScope());
 	thisVar->setDeclaration(&*var);
 	return var;
 }
@@ -330,7 +341,7 @@ unique_ptr<LValue> Parser::parseLValue() {
 	
 	if (tokenizer->peek(TT_IDENTIFIER)) {
 		if (!tokenizer->check(TF_VARIABLE)) {
-			printError("expected variable identifier");
+			printError("expected variable identifier (or you may be violating scope)");
 			return NULL;
 		}
 		
