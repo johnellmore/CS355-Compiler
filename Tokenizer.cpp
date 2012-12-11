@@ -61,6 +61,42 @@ void initKeywordList() {
 	keywords["=="] = TT_INVALID; // a comment - doesn't need a real type, as it won't get pushed as a token
 }
 
+// look at the current token
+bool Tokenizer::peek(TokenType expected) {
+	return currentToken->getType() == expected;
+}
+
+// look at the current token
+bool Tokenizer::peek(TokenFlag expected) {
+	return currentToken->hasAttribute(expected);
+}
+
+// look at the current token and skip if it matches
+bool Tokenizer::check(TokenType expected) {
+	if (currentToken->getType() == expected) {
+		nextToken();
+		return true;
+	}
+	return false;
+}
+
+// look at the current token and skip if it matches
+bool Tokenizer::check(TokenFlag expected) {
+	if (currentToken->hasAttribute(expected)) {
+		nextToken();
+		return true;
+	}
+	return false;
+}
+
+void Tokenizer::debugSymbols() {
+	LOG << "Tokenizer Symbol Table:" << endl;
+	for (auto it = symbols.begin(); it != symbols.end(); it++) {
+		if ((*it)->getType() != 42) continue;
+		LOG << "  " << (*it)->getText() << " " << (*it)->getType() << endl;
+	}
+}
+
 // checks if a token is a keyword
 bool Tokenizer::isKeyword(const string test) {
 	return keywords.find(test) != keywords.end();
@@ -85,7 +121,7 @@ bool Tokenizer::isConstantChar(const char test) {
 
 // construct the Tokenizer object
 Tokenizer::Tokenizer(istream &ninput, ostream &nerrors) :
-	input(ninput), errors(nerrors) {
+	input(ninput), errors(nerrors), curScope(0), nextScope(1) {
 	initKeywordList();
 	position.lineNumber = 1;
 	position.character = 0;
@@ -177,34 +213,6 @@ void Tokenizer::nextToken() {
 		
 	}
 	return pushToken(curToken, TT_EOF);
-}
-
-// look at the current token
-bool Tokenizer::peek(TokenType expected) {
-	return currentToken->getType() == expected;
-}
-
-// look at the current token
-bool Tokenizer::peek(TokenFlag expected) {
-	return currentToken->hasAttribute(expected);
-}
-
-// look at the current token and skip if it matches
-bool Tokenizer::check(TokenType expected) {
-	if (currentToken->getType() == expected) {
-		nextToken();
-		return true;
-	}
-	return false;
-}
-
-// look at the current token and skip if it matches
-bool Tokenizer::check(TokenFlag expected) {
-	if (currentToken->hasAttribute(expected)) {
-		nextToken();
-		return true;
-	}
-	return false;
 }
 
 void Tokenizer::pushToken(const string &text, TokenType type, TokenFlag flags) {

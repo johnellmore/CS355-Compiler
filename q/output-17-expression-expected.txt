@@ -1,29 +1,3 @@
 Setup...
-  Token: "function" of type:25 flag:0 @ L1C8
 Setup complete.
 Parsing... 
-  parsing module
-  Token: "something" of type:42 flag:0 @ L1C18
-  parsing function signature
-  Token: ":" of type:37 flag:0 @ L1C19
-    function set on: something
-  Token: "bool" of type:2 flag:1 @ L1C23
-  parsing scalar type
-  Token: "input" of type:42 flag:0 @ L1C29
-  parsing declaration list
-  parsing variable declaration
-  Token: ":" of type:37 flag:0 @ L1C30
-  Token: "long" of type:5 flag:1 @ L1C34
-  parsing type
-  parsing scalar type
-  Token: "do" of type:27 flag:0 @ L1C37
-    variable set on: input
-    Finished function signature parsing
-    Checking for function existence... 
-  parsing function body
-  Token: "set" of type:30 flag:0 @ L2C7
-  parsing statement list
-  parsing statement
-  parsing l-value
-  Token: ";" of type:38 flag:0 @ L2C15
-  parsing expression

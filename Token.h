@@ -3,7 +3,7 @@
 enum TokenType { 
 	TT_INVALID,
 	TT_EOF,
-
+	
 	TT_BOOL, 
 	TT_BYTE, 
 	TT_SHORT, 
@@ -103,6 +103,7 @@ private:
 	string				text;
 	TokenType			type;
 	TokenFlag			flags;
+	unsigned int		scope;
 	AST *				declaration;
 };
 

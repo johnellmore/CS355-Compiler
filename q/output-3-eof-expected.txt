@@ -1,6 +1,3 @@
 Setup...
-  Token: "end" of type:29 flag:0 @ L1C3
 Setup complete.
 Parsing... 
-  parsing module
-  Token: "function" of type:25 flag:0 @ L3C8

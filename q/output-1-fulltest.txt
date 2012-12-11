@@ -1,308 +1,8 @@
 Setup...
-  Token: "function" of type:25 flag:0 @ L1C8
 Setup complete.
 Parsing... 
-  parsing module
-  Token: "increment" of type:42 flag:0 @ L1C18
-  parsing function signature
-  Token: ":" of type:37 flag:0 @ L1C19
-    function set on: increment
-  Token: "short" of type:4 flag:1 @ L1C24
-  parsing scalar type
-  Token: "number" of type:42 flag:0 @ L1C31
-  parsing declaration list
-  parsing variable declaration
-  Token: ":" of type:37 flag:0 @ L1C32
-  Token: "short" of type:4 flag:1 @ L1C37
-  parsing type
-  parsing scalar type
-  Token: "end" of type:29 flag:0 @ L1C41
-    variable set on: number
-    Finished function signature parsing
-    Checking for function existence... 
-  parsing function body
-  Token: "vars" of type:26 flag:0 @ L3C4
-  parsing module
-  Token: "x" of type:42 flag:0 @ L3C6
-  parsing declaration list
-  parsing variable declaration
-  Token: ":" of type:37 flag:0 @ L3C7
-  Token: "bool" of type:2 flag:1 @ L3C11
-  parsing type
-  parsing scalar type
-  Token: "end" of type:29 flag:0 @ L3C15
-    variable set on: x
-  Token: "function" of type:25 flag:0 @ L5C8
-  parsing module
-  Token: "position" of type:42 flag:0 @ L5C17
-  parsing function signature
-  Token: ":" of type:37 flag:0 @ L5C18
-    function set on: position
-  Token: "short" of type:4 flag:1 @ L5C23
-  parsing scalar type
-  Token: "needle" of type:42 flag:0 @ L5C30
-  parsing declaration list
-  parsing variable declaration
-  Token: ":" of type:37 flag:0 @ L5C31
-  Token: "short" of type:4 flag:1 @ L5C36
-  parsing type
-  parsing scalar type
-  Token: ";" of type:38 flag:0 @ L5C37
-    variable set on: needle
-  Token: "haystack" of type:42 flag:0 @ L5C46
-  parsing declaration list
-  parsing variable declaration
-  Token: ":" of type:37 flag:0 @ L5C47
-  Token: "short" of type:4 flag:1 @ L5C52
-  parsing type
-  parsing scalar type
-  Token: "[" of type:35 flag:0 @ L5C53
-  Token: "10" of type:41 flag:16 @ L5C55
-  Token: "]" of type:36 flag:0 @ L5C56
-  Token: "vars" of type:26 flag:0 @ L6C8
-    variable set on: haystack
-    Finished function signature parsing
-    Checking for function existence... 
-  parsing function body
-  Token: "i" of type:42 flag:0 @ L6C10
-  parsing declaration list
-  parsing variable declaration
-  Token: ":" of type:37 flag:0 @ L6C11
-  Token: "short" of type:4 flag:1 @ L6C16
-  parsing type
-  parsing scalar type
-  Token: ";" of type:38 flag:0 @ L6C17
-    variable set on: i
-  Token: "found" of type:42 flag:0 @ L6C23
-  parsing declaration list
-  parsing variable declaration
-  Token: ":" of type:37 flag:0 @ L6C24
-  Token: "bool" of type:2 flag:1 @ L6C28
-  parsing type
-  parsing scalar type
-  Token: "do" of type:27 flag:0 @ L6C31
-    variable set on: found
-  Token: "set" of type:30 flag:0 @ L7C7
-  parsing statement list
-  parsing statement
-  parsing l-value
-  Token: "0" of type:41 flag:16 @ L7C11
-  parsing expression
-  Token: ";" of type:38 flag:0 @ L7C12
-  Token: "set" of type:30 flag:0 @ L8C7
-  parsing statement list
-  parsing statement
-  parsing l-value
-  Token: "false" of type:24 flag:16 @ L8C19
-  parsing expression
-  Token: ";" of type:38 flag:0 @ L8C20
-  Token: "{" of type:33 flag:0 @ L9C5
-  parsing statement list
-  parsing statement
-  Token: "{" of type:33 flag:0 @ L10C9
-  parsing statement list
-  parsing statement
-  Token: "set" of type:30 flag:0 @ L11C15
-  parsing statement list
-  parsing statement
-  parsing l-value
-  Token: "true" of type:23 flag:16 @ L11C26
-  parsing expression
-  Token: "}" of type:34 flag:0 @ L12C9
-  Token: "if" of type:31 flag:0 @ L12C12
-  Token: "=" of type:15 flag:2 @ L12C14
-  parsing expression
-  parsing expression
-  parsing l-value
-  Token: "[" of type:35 flag:0 @ L12C24
-  parsing expression
-  parsing l-value
-  Token: "]" of type:36 flag:0 @ L12C26
-  parsing expression
-  parsing l-value
-  Token: "else" of type:32 flag:0 @ L12C38
-  Token: "{" of type:33 flag:0 @ L12C40
-  Token: "set" of type:30 flag:0 @ L13C15
-  parsing statement list
-  parsing statement
-  parsing l-value
-  parsing expression
-  parsing parameter list
-  parsing expression
-  parsing l-value
-  Token: "!" of type:40 flag:0 @ L13C31
-  parsing parameter list
-  Token: "}" of type:34 flag:0 @ L14C9
-  Token: "}" of type:34 flag:0 @ L15C5
-  Token: "^" of type:39 flag:0 @ L15C7
-  Token: "and" of type:17 flag:2 @ L15C11
-  parsing expression
-  Token: "<" of type:11 flag:2 @ L15C13
-  parsing expression
-  parsing expression
-  parsing l-value
-  Token: "10" of type:41 flag:16 @ L15C18
-  parsing expression
-  Token: "=" of type:15 flag:2 @ L15C20
-  parsing expression
-  parsing expression
-  parsing l-value
-  Token: "false" of type:24 flag:16 @ L15C32
-  parsing expression
-  Token: "return" of type:28 flag:0 @ L16C10
-  Token: "neg" of type:20 flag:4 @ L16C14
-  parsing expression
-  Token: "neg" of type:20 flag:4 @ L16C18
-  parsing expression
-  parsing expression
-  parsing l-value
-  Token: "function" of type:25 flag:0 @ L19C8
-  parsing module
-  parsing function signature
-  Token: ":" of type:37 flag:0 @ L19C19
-    function set on: increment
-  Token: "short" of type:4 flag:1 @ L19C24
-  parsing scalar type
-  parsing declaration list
-  parsing variable declaration
-  Token: ":" of type:37 flag:0 @ L19C32
-  Token: "short" of type:4 flag:1 @ L19C37
-  parsing type
-  parsing scalar type
-  Token: "do" of type:27 flag:0 @ L19C40
-    variable set on: number
-    Finished function signature parsing
-    Checking for function existence... found a matching function call!
-  parsing function body
-  Token: "--" of type:22 flag:8 @ L20C6
-  parsing statement list
-  parsing statement
-  parsing expression
-  parsing l-value
-  Token: ";" of type:38 flag:0 @ L20C13
-  Token: "++" of type:21 flag:8 @ L21C6
-  parsing statement list
-  parsing statement
-  parsing expression
-  parsing l-value
-  Token: ";" of type:38 flag:0 @ L21C13
-  Token: "set" of type:30 flag:0 @ L22C7
-  parsing statement list
-  parsing statement
-  parsing l-value
-  Token: "+" of type:6 flag:2 @ L22C16
-  parsing expression
-  parsing expression
-  parsing l-value
-  Token: "1" of type:41 flag:16 @ L22C25
-  parsing expression
-  Token: "return" of type:28 flag:0 @ L23C10
-  parsing expression
-  parsing l-value
-  Token: "vars" of type:26 flag:0 @ L26C4
-  parsing module
-  Token: "y" of type:42 flag:0 @ L26C6
-  parsing declaration list
-  parsing variable declaration
-  Token: ":" of type:37 flag:0 @ L26C7
-  Token: "long" of type:5 flag:1 @ L26C11
-  parsing type
-  parsing scalar type
-  Token: "end" of type:29 flag:0 @ L26C15
-    variable set on: y
-  Token: "function" of type:25 flag:0 @ L29C8
-  parsing module
-  Token: "andtest" of type:42 flag:0 @ L29C16
-  parsing function signature
-  Token: ":" of type:37 flag:0 @ L29C17
-    function set on: andtest
-  Token: "bool" of type:2 flag:1 @ L29C21
-  parsing scalar type
-  Token: "something" of type:42 flag:0 @ L29C31
-  parsing declaration list
-  parsing variable declaration
-  Token: ":" of type:37 flag:0 @ L29C32
-  Token: "bool" of type:2 flag:1 @ L29C36
-  parsing type
-  parsing scalar type
-  Token: "end" of type:29 flag:0 @ L29C40
-    variable set on: something
-    Finished function signature parsing
-    Checking for function existence... 
-  parsing function body
-  Token: "function" of type:25 flag:0 @ L31C8
-  parsing module
-  parsing function signature
-  Token: ":" of type:37 flag:0 @ L31C17
-    function set on: andtest
-  Token: "bool" of type:2 flag:1 @ L31C21
-  parsing scalar type
-  parsing declaration list
-  parsing variable declaration
-  Token: ":" of type:37 flag:0 @ L31C32
-  Token: "bool" of type:2 flag:1 @ L31C36
-  parsing type
-  parsing scalar type
-  Token: "return" of type:28 flag:0 @ L32C10
-    variable set on: something
-    Finished function signature parsing
-    Checking for function existence... found a matching function call!
-  parsing function body
-  parsing expression
-  parsing l-value
-  Token: "end" of type:29 flag:0 @ L34C3
-  parsing module
-  Token: "ÿ" of type:1 flag:0 @ L35C1
 Parsing succeeded.
 Running type checker... 
-  Type Debug @ L3C15: type bool of size 0
-  Type Debug @ L26C15: type long of size 0
-  Type Debug @ L1C41: type short of size 0
-  Type Debug @ L20C13: lvalue number with no index
-  Type Debug @ L20C13: incdec operating on short
-  Type Debug @ L21C13: lvalue number with no index
-  Type Debug @ L21C13: incdec operating on short
-  Type Debug @ L22C25: lvalue number with no index
-  Type Debug @ L23C10: binary + short and byte
-    Converting right operand in binary expression
-  Type Debug @ L22C16: lvalue number with no index
-  Type Debug @ L23C10: assigning short into short
-  Type Debug @ L26C4: lvalue number with no index
-  Type Debug @ L1C41: function increment has type short
-  Type Debug @ L5C37: type short of size 0
-  Type Debug @ L6C8: type short of size 10
-  Type Debug @ L6C17: type short of size 0
-  Type Debug @ L6C31: type bool of size 0
-  Type Debug @ L7C11: lvalue i with no index
-  Type Debug @ L7C12: assigning byte into short
-    Converting types on assignment statement
-  Type Debug @ L8C19: lvalue found with no index
-  Type Debug @ L8C20: assigning bool into bool
-  Type Debug @ L11C26: lvalue found with no index
-  Type Debug @ L12C9: assigning bool into bool
-  Type Debug @ L13C31: lvalue i with no index
-  Type Debug @ L14C9: funccall increment with 1 params
-    checking param #1 of increment
-  Type Debug @ L13C27: lvalue i with no index
-  Type Debug @ L14C9: assigning short into short
-  Type Debug @ L12C38: lvalue needle with no index
-  Type Debug @ L12C26: lvalue i with no index
-  Type Debug @ L12C33: lvalue haystack has index type short
-  Type Debug @ L12C38: binary = short and short
-  Type Debug @ L15C5: if statement condition of type bool
-  Type Debug @ L15C32: lvalue found with no index
-  Type Debug @ L16C10: binary = bool and bool
-  Type Debug @ L15C18: lvalue i with no index
-  Type Debug @ L15C20: binary < short and byte
-    Converting right operand in binary expression
-  Type Debug @ L16C10: binary and bool and bool
-  Type Debug @ L19C8: lvalue i with no index
-  Type Debug @ L19C8: unary neg operating on short
-  Type Debug @ L19C8: unary neg operating on short
-  Type Debug @ L6C8: function position has type short
-  Type Debug @ L29C40: type bool of size 0
-  Type Debug @ L34C3: lvalue something with no index
-  Type Debug @ L29C40: function andtest has type bool
 Type checker succeeded.
 Dumping AST...
 Module variables:
@@ -324,13 +24,97 @@ Module functions:
 |  |  |  |  Expression:
 |  |  |  |  |  Binary + expression:
 |  |  |  |  |  |  Left expression:
-|  |  |  |  |  |  |  L-Value: number
+|  |  |  |  |  |  |  Binary - expression:
+|  |  |  |  |  |  |  |  Left expression:
+|  |  |  |  |  |  |  |  |  Type Conversion (into short):
+|  |  |  |  |  |  |  |  |  |  Constant: 1 : byte
+|  |  |  |  |  |  |  |  Right expression:
+|  |  |  |  |  |  |  |  |  L-Value: number
 |  |  |  |  |  |  Right expression:
 |  |  |  |  |  |  |  Type Conversion (into short):
-|  |  |  |  |  |  |  |  Constant: 1 : byte
+|  |  |  |  |  |  |  |  Constant: 2 : byte
 |  |  Return expression:
 |  |  |  L-Value: number
-|  position : short definition
+|  sum : long definition
+|  |  Parameters:
+|  |  |  in : long[100]
+|  |  |  size : byte
+|  |  Local variables:
+|  |  |  total : long
+|  |  |  j : byte
+|  |  Statements:
+|  |  |  Assignment statement:
+|  |  |  |  L-Value: j
+|  |  |  |  Expression:
+|  |  |  |  |  Constant: 0 : byte
+|  |  |  Loop statement:
+|  |  |  |  Expression:
+|  |  |  |  |  Binary < expression:
+|  |  |  |  |  |  Left expression:
+|  |  |  |  |  |  |  L-Value: j
+|  |  |  |  |  |  Right expression:
+|  |  |  |  |  |  |  L-Value: size
+|  |  |  |  Statements:
+|  |  |  |  |  Assignment statement:
+|  |  |  |  |  |  L-Value: total
+|  |  |  |  |  |  Expression:
+|  |  |  |  |  |  |  Binary + expression:
+|  |  |  |  |  |  |  |  Left expression:
+|  |  |  |  |  |  |  |  |  L-Value: total
+|  |  |  |  |  |  |  |  Right expression:
+|  |  |  |  |  |  |  |  |  L-Value: in
+|  |  |  |  |  |  |  |  |  |  Index:
+|  |  |  |  |  |  |  |  |  |  |  Increment expression:
+|  |  |  |  |  |  |  |  |  |  |  |  L-Value: j
+|  |  Return expression:
+|  |  |  L-Value: total
+|  addthree : long definition
+|  |  Parameters:
+|  |  |  n1 : long
+|  |  |  n2 : long
+|  |  |  n3 : long
+|  |  Local variables:
+|  |  |  arr : long[100]
+|  |  Statements:
+|  |  |  Assignment statement:
+|  |  |  |  L-Value: arr
+|  |  |  |  |  Index:
+|  |  |  |  |  |  Constant: 0 : byte
+|  |  |  |  Expression:
+|  |  |  |  |  L-Value: n1
+|  |  |  Assignment statement:
+|  |  |  |  L-Value: arr
+|  |  |  |  |  Index:
+|  |  |  |  |  |  Constant: 1 : byte
+|  |  |  |  Expression:
+|  |  |  |  |  L-Value: n2
+|  |  |  Assignment statement:
+|  |  |  |  L-Value: arr
+|  |  |  |  |  Index:
+|  |  |  |  |  |  Constant: 2 : byte
+|  |  |  |  Expression:
+|  |  |  |  |  L-Value: n3
+|  |  Return expression:
+|  |  |  Function call to sum:
+|  |  |  |  Parameters:
+|  |  |  |  |  L-Value: arr
+|  |  |  |  |  Constant: 3 : byte
+|  thethree : long definition
+|  |  Return expression:
+|  |  |  Function call to addthree:
+|  |  |  |  Parameters:
+|  |  |  |  |  Type Conversion (into long):
+|  |  |  |  |  |  Constant: 111 : byte
+|  |  |  |  |  Type Conversion (into long):
+|  |  |  |  |  |  Constant: 2222 : short
+|  |  |  |  |  Constant: 331000 : long
+|  negate : long definition
+|  |  Parameters:
+|  |  |  input : long
+|  |  Return expression:
+|  |  |  Unary neg expression:
+|  |  |  |  L-Value: input
+|  position : long definition
 |  |  Parameters:
 |  |  |  needle : short
 |  |  |  haystack : short[10]
@@ -377,7 +161,8 @@ Module functions:
 |  |  |  |  |  |  |  Assignment statement:
 |  |  |  |  |  |  |  |  L-Value: found
 |  |  |  |  |  |  |  |  Expression:
-|  |  |  |  |  |  |  |  |  Constant: 1 : bool
+|  |  |  |  |  |  |  |  |  Unary not expression:
+|  |  |  |  |  |  |  |  |  |  Constant: 1 : bool
 |  |  |  |  |  |  Else statements:
 |  |  |  |  |  |  |  Assignment statement:
 |  |  |  |  |  |  |  |  L-Value: i
@@ -387,11 +172,14 @@ Module functions:
 |  |  |  |  |  |  |  |  |  |  |  L-Value: i
 |  |  Return expression:
 |  |  |  Unary neg expression:
-|  |  |  |  Unary neg expression:
-|  |  |  |  |  L-Value: i
-|  andtest : bool definition
+|  |  |  |  Function call to negate:
+|  |  |  |  |  Parameters:
+|  |  |  |  |  |  Type Conversion (into long):
+|  |  |  |  |  |  |  L-Value: i
+|  andtest : short definition
 |  |  Parameters:
-|  |  |  something : bool
+|  |  |  something : byte
 |  |  Return expression:
-|  |  |  L-Value: something
+|  |  |  Type Conversion (into short):
+|  |  |  |  L-Value: something
 AST dumped.

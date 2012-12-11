@@ -5,11 +5,9 @@ struct Position {
 	Position(int l, int c) : lineNumber(l), character(c) {}
 	Position(const Position &p) : lineNumber(p.lineNumber), character(p.character) {}
 	string toString() const;
-    int lineNumber;
-    int character;
+	int lineNumber;
+	int character;
 };
-
-string formatError(const Position &p,const string &error);
 
 typedef list<unique_ptr<Token>> TokenList;
 
@@ -27,22 +25,15 @@ public:
 	bool			check(TokenType expected);
 	bool			check(TokenFlag expected);
 	
-	// look at the current token, skip if match, and complain if it does not match
-	bool			expect(TokenType expected,string description);
-	bool			expect(TokenFlag expected,string description);
-	
-	void			report(string error) { errors << formatError(position,error); }
+	// scoping 
+	unsigned int	getScope() const { return curScope; };
+	unsigned int	focusScope() { curScope = nextScope++; return curScope; };
+	void			blurScope() { curScope = 0; }
 	
 	Token *			lastToken()         const { assert(previousToken); return previousToken; }
 	
 	const Position &currentPosition()   const { return position; }
-	void			printSymbols() {
-		LOG << "Tokenizer Symbol Table:" << endl;
-		for (auto it = symbols.begin(); it != symbols.end(); it++) {
-			if ((*it)->getType() != 42) continue;
-			LOG << "  " << (*it)->getText() << " " << (*it)->getType() << endl;
-		}
-	}
+	void			debugSymbols();
 	
 private:
 	istream &		input;
@@ -60,7 +51,9 @@ private:
 	
 	Position		position;
 	string			lineBuffer;
-
+	unsigned int	curScope;
+	unsigned int	nextScope;
+	
 	Token *			currentToken;
 	Token *			previousToken;
 };

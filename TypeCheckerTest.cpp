@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
 	auto tcReturn = m->apply(tc);
 	if (tcReturn.size()) { // a non-empty return string means an error occurred
 		cerr << "Type checking failed." << endl;
-		//return 0;
+		return 0;
 	}
 	cout << "Type checker succeeded." << endl;
 	

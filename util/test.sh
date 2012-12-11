@@ -95,6 +95,64 @@ echo "  Testing Error 26: Fail parameter list parse"
 
 
 
+echo "\nTESTING TYPE CHECKER"
+
+echo "  Testing TC Error 1: Function not defined"
+./a.out q/tc-1-function-not-defined.q > q/output-tc-1-function-not-defined.txt
+
+echo "  Testing TC Error 2: Function return type mismatch"
+./a.out q/tc-2-function-return-type-mismatch.q > q/output-tc-2-function-return-type-mismatch.txt
+
+echo "  Testing TC Error 3: Array as assignment lvalue"
+./a.out q/tc-3-array-as-assignment-lvalue.q > q/output-tc-3-array-as-assignment-lvalue.txt
+
+echo "  Testing TC Error 4: Array as assignment rvalue"
+./a.out q/tc-4-array-as-assignment-rvalue.q > q/output-tc-4-array-as-assignment-rvalue.txt
+
+echo "  Testing TC Error 5: Type mismatch on assignment"
+./a.out q/tc-5-type-mismatch-on-assignment.q > q/output-tc-5-type-mismatch-on-assignment.txt
+
+echo "  Testing TC Error 6: If condition mismatch"
+./a.out q/tc-6-if-condition-mismatch.q > q/output-tc-6-if-condition-mismatch.txt
+
+echo "  Testing TC Error 7: Unary operator type mismatch (two errors)"
+./a.out q/tc-7-unary-operator-type-mismatch.q > q/output-tc-7-unary-operator-type-mismatch.txt
+
+echo "  Testing TC Error 8: Unary operand is array"
+./a.out q/tc-8-unary-operand-is-array.q > q/output-tc-8-unary-operand-is-array.txt
+
+echo "  Testing TC Error 9: Binary operand is array"
+./a.out q/tc-9-binary-operand-is-array.q > q/output-tc-9-binary-operand-is-array.txt
+
+echo "  Testing TC Error 10: Binary expression type mismatch"
+./a.out q/tc-10-binary-expr-type-mismatch.q > q/output-tc-10-binary-expr-type-mismatch.txt
+
+echo "  Testing TC Error 11: LValue index not numeric"
+./a.out q/tc-11-lvalue-index-not-numeric.q > q/output-tc-11-lvalue-index-not-numeric.txt
+
+echo "  Testing TC Error 12: IncDec invalid operand (two errors)"
+./a.out q/tc-12-incdec-invalid-operand.q > q/output-tc-12-incdec-invalid-operand.txt
+
+echo "  Testing TC Error 13: Function call has too many/few params (two errors)"
+./a.out q/tc-13-funccall-param-count-off.q > q/output-tc-13-funccall-param-count-off.txt
+
+echo "  Testing TC Error 14: Function call cannot convert array"
+./a.out q/tc-14-funccall-cannot-convert-array.q > q/output-tc-14-funccall-cannot-convert-array.txt
+
+echo "  Testing TC Error 15: Function call parameter type mismatch"
+./a.out q/tc-15-funccall-param-type-mismatch.q > q/output-tc-15-funccall-param-type-mismatch.txt
+
+echo "  Testing TC Error 16: Function call parameter requires array, single given"
+./a.out q/tc-16-funccall-func-requires-array.q > q/output-tc-16-funccall-func-requires-array.txt
+
+echo "  Testing TC Error 17: Function call parameter requires single, array given"
+./a.out q/tc-17-funccall-array-param-given.q > q/output-tc-17-funccall-array-param-given.txt
+
+echo "  Testing TC Error 18: FUnction call array size mismatch"
+./a.out q/tc-18-funccall-param-array-size.q > q/output-tc-18-funccall-param-array-size.txt
+
+
+
 echo "\nTESTING FRAMEWORK"
 
 echo "  Testing Error 101: Framework argument count exceeded"

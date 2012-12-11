@@ -13,12 +13,7 @@ string TypeChecker::debugStr(AST * node) {
 
 string TypeChecker::applyType(Type *ty) {
 	LOG << debugStr(ty) << "type " << t[ty->type] << " of size " << ty->size << endl;
-	
-	// ensure no ST_INVALID types
-	if (ty->type == ST_INVALID) {
-		printError(ty, "declaration has an invalid scalar type");
-		return "error";
-	}
+	assert(ty->type != ST_INVALID);
 	
 	return "";
 }
@@ -125,10 +120,10 @@ string TypeChecker::applyUnaryExpr(UnaryExpr *ue,string expr) {
 	LOG << debugStr(ue) << "unary " << oper[ue->oper-TT_PLUS] << " operating on " << t[exprType] << endl;
 	
 	if (ue->oper == TT_NEG && exprType <= ST_BOOL) {
-		printError(ue, " unary neg must operate on numeric types");
+		printError(ue, "unary neg must operate on numeric types");
 		return "error";
 	} else if (ue->oper == TT_NOT && exprType != ST_BOOL) {
-		printError(ue, " unary not must operate on booleans");
+		printError(ue, "unary not must operate on booleans");
 		return "error";
 	}
 	
@@ -180,7 +175,7 @@ string TypeChecker::applyBinaryExpr(BinaryExpr *be,string leftExpr,string rightE
 	}
 	
 	// incompatible types
-	printError(be, "invalid operand in expression");
+	printError(be, "type mismatch in binary expression");
 	return "error";
 }
 
