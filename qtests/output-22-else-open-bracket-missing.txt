@@ -1,0 +1,42 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "givetrue" [type:42, flag:0, scope:1] @ L1C17
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C18
+    function set on: givetrue
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C22
+  parsing scalar type
+  Token: "input" [type:42, flag:0, scope:1] @ L1C28
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C29
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C33
+  parsing type
+  parsing scalar type
+  Token: "do" [type:27, flag:0, scope:1] @ L1C36
+    variable set on: input
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "{" [type:33, flag:0, scope:1] @ L2C5
+  parsing statement list
+  parsing statement
+  Token: "set" [type:30, flag:0, scope:1] @ L3C11
+  parsing statement list
+  parsing statement
+  parsing l-value
+  Token: "true" [type:23, flag:16, scope:1] @ L3C22
+  parsing expression
+  Token: "}" [type:34, flag:0, scope:1] @ L4C5
+  Token: "if" [type:31, flag:0, scope:1] @ L4C8
+  Token: "=" [type:15, flag:2, scope:1] @ L4C10
+  parsing expression
+  Token: "1" [type:41, flag:16, scope:1] @ L4C12
+  parsing expression
+  Token: "1" [type:41, flag:16, scope:1] @ L4C14
+  parsing expression
+  Token: "else" [type:32, flag:0, scope:1] @ L4C19
+  Token: "set" [type:30, flag:0, scope:1] @ L5C11

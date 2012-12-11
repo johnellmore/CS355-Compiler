@@ -1,0 +1,52 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "convert" [type:42, flag:0, scope:1] @ L1C16
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C17
+    function set on: convert
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C21
+  parsing scalar type
+  Token: "input" [type:42, flag:0, scope:1] @ L1C27
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C28
+  Token: "long" [type:5, flag:1, scope:1] @ L1C32
+  parsing type
+  parsing scalar type
+  Token: "vars" [type:26, flag:0, scope:1] @ L2C4
+    variable set on: input
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "temp" [type:42, flag:0, scope:1] @ L2C9
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L2C10
+  Token: "bool" [type:2, flag:1, scope:1] @ L2C14
+  parsing type
+  parsing scalar type
+  Token: "do" [type:27, flag:0, scope:1] @ L2C17
+    variable set on: temp
+  Token: "set" [type:30, flag:0, scope:1] @ L3C7
+  parsing statement list
+  parsing statement
+  parsing l-value
+  parsing expression
+  parsing l-value
+  Token: "return" [type:28, flag:0, scope:1] @ L4C10
+  parsing expression
+  parsing l-value
+  Token: "end" [type:29, flag:0, scope:1] @ L6C3
+  parsing module
+  Token: "" [type:1, flag:0, scope:0] @ L6C3
+Parsing succeeded.
+Running type checker... 
+  Type Debug @ L2C4: type long of size 0
+  Type Debug @ L2C17: type bool of size 0
+  Type Debug @ L4C10: lvalue input with no index
+  Type Debug @ L3C18: lvalue temp with no index
+  Type Debug @ L4C10: assigning long into bool
+  Type Debug @ L6C3: lvalue temp with no index

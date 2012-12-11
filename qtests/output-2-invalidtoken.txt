@@ -1,0 +1,10 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "df" [type:42, flag:0, scope:1] @ L1C11
+  parsing function signature
+  Token: "#$%fgdf" [type:0, flag:0, scope:1] @ L2C0
+    function set on: df
+    Finished function signature parsing

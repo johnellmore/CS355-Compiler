@@ -1,0 +1,62 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "test" [type:42, flag:0, scope:1] @ L1C13
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C14
+    function set on: test
+  Token: "long" [type:5, flag:1, scope:1] @ L1C18
+  parsing scalar type
+  Token: "compare" [type:42, flag:0, scope:1] @ L1C26
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C27
+  Token: "long" [type:5, flag:1, scope:1] @ L1C31
+  parsing type
+  parsing scalar type
+  Token: ";" [type:38, flag:0, scope:1] @ L1C33
+    variable set on: compare
+  Token: "input" [type:42, flag:0, scope:1] @ L1C39
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C40
+  Token: "long" [type:5, flag:1, scope:1] @ L1C44
+  parsing type
+  parsing scalar type
+  Token: "[" [type:35, flag:0, scope:1] @ L1C45
+  Token: "10" [type:41, flag:16, scope:1] @ L1C47
+  Token: "]" [type:36, flag:0, scope:1] @ L1C48
+  Token: "return" [type:28, flag:0, scope:1] @ L2C10
+    variable set on: input
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "=" [type:15, flag:2, scope:1] @ L2C12
+  parsing expression
+  Token: "+" [type:6, flag:2, scope:1] @ L2C14
+  parsing expression
+  parsing expression
+  parsing l-value
+  parsing expression
+  parsing l-value
+  Token: "+" [type:6, flag:2, scope:1] @ L2C30
+  parsing expression
+  parsing expression
+  parsing l-value
+  parsing expression
+  parsing l-value
+  Token: "end" [type:29, flag:0, scope:1] @ L4C3
+  parsing module
+  Token: "" [type:1, flag:0, scope:0] @ L4C3
+Parsing succeeded.
+Running type checker... 
+  Type Debug @ L1C33: type long of size 0
+  Type Debug @ L2C10: type long of size 10
+  Type Debug @ L4C3: lvalue compare with no index
+  Type Debug @ L2C44: lvalue input with no index
+  Type Debug @ L4C3: binary + long and long
+  Type Debug @ L2C30: lvalue input with no index
+  Type Debug @ L2C28: lvalue compare with no index
+  Type Debug @ L2C30: binary + long and long

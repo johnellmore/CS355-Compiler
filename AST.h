@@ -123,6 +123,7 @@ public:
 	unsigned int				scope;
 	ScalarType                  type;
 	DeclList                    params;
+	unsigned int				paramSpace;
 	
 	DeclList                    vars;       // empty if only a declaration
 	StmtList                    stmts;      // empty if only a declaration

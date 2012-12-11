@@ -1,0 +1,83 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "convert" [type:42, flag:0, scope:1] @ L1C16
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C17
+    function set on: convert
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C21
+  parsing scalar type
+  Token: "input" [type:42, flag:0, scope:1] @ L1C27
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C28
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C32
+  parsing type
+  parsing scalar type
+  Token: "[" [type:35, flag:0, scope:1] @ L1C33
+  Token: "2" [type:41, flag:16, scope:1] @ L1C34
+  Token: "]" [type:36, flag:0, scope:1] @ L1C35
+  Token: "vars" [type:26, flag:0, scope:1] @ L2C4
+    variable set on: input
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "temp" [type:42, flag:0, scope:1] @ L2C9
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L2C10
+  Token: "bool" [type:2, flag:1, scope:1] @ L2C14
+  parsing type
+  parsing scalar type
+  Token: "do" [type:27, flag:0, scope:1] @ L2C17
+    variable set on: temp
+  Token: "{" [type:33, flag:0, scope:1] @ L3C5
+  parsing statement list
+  parsing statement
+  Token: "set" [type:30, flag:0, scope:1] @ L4C11
+  parsing statement list
+  parsing statement
+  parsing l-value
+  parsing expression
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:1] @ L4C23
+  Token: "0" [type:41, flag:16, scope:1] @ L4C24
+  parsing expression
+  Token: "]" [type:36, flag:0, scope:1] @ L4C25
+  Token: "}" [type:34, flag:0, scope:1] @ L5C5
+  Token: "if" [type:31, flag:0, scope:1] @ L5C8
+  Token: "5" [type:41, flag:16, scope:1] @ L5C10
+  parsing expression
+  Token: "else" [type:32, flag:0, scope:1] @ L5C15
+  Token: "{" [type:33, flag:0, scope:1] @ L5C17
+  Token: "set" [type:30, flag:0, scope:1] @ L6C11
+  parsing statement list
+  parsing statement
+  parsing l-value
+  parsing expression
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:1] @ L6C23
+  Token: "1" [type:41, flag:16, scope:1] @ L6C24
+  parsing expression
+  Token: "]" [type:36, flag:0, scope:1] @ L6C25
+  Token: "}" [type:34, flag:0, scope:1] @ L7C5
+  Token: "return" [type:28, flag:0, scope:1] @ L8C10
+  parsing expression
+  parsing l-value
+  Token: "end" [type:29, flag:0, scope:1] @ L10C3
+  parsing module
+  Token: "" [type:1, flag:0, scope:0] @ L10C3
+Parsing succeeded.
+Running type checker... 
+  Type Debug @ L2C4: type bool of size 2
+  Type Debug @ L2C17: type bool of size 0
+  Type Debug @ L5C5: lvalue input has index type byte
+  Type Debug @ L4C22: lvalue temp with no index
+  Type Debug @ L5C5: assigning bool into bool
+  Type Debug @ L7C5: lvalue input has index type byte
+  Type Debug @ L6C22: lvalue temp with no index
+  Type Debug @ L7C5: assigning bool into bool
+  Type Debug @ L8C10: if statement condition of type byte
+  Type Debug @ L10C3: lvalue temp with no index

@@ -1,0 +1,80 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "sum" [type:42, flag:0, scope:1] @ L1C12
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C13
+    function set on: sum
+  Token: "long" [type:5, flag:1, scope:1] @ L1C17
+  parsing scalar type
+  Token: "n" [type:42, flag:0, scope:1] @ L1C19
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C20
+  Token: "long" [type:5, flag:1, scope:1] @ L1C24
+  parsing type
+  parsing scalar type
+  Token: "[" [type:35, flag:0, scope:1] @ L1C25
+  Token: "2" [type:41, flag:16, scope:1] @ L1C26
+  Token: "]" [type:36, flag:0, scope:1] @ L1C27
+  Token: "return" [type:28, flag:0, scope:1] @ L2C10
+    variable set on: n
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "+" [type:6, flag:2, scope:1] @ L2C12
+  parsing expression
+  parsing expression
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:1] @ L2C15
+  Token: "0" [type:41, flag:16, scope:1] @ L2C16
+  parsing expression
+  Token: "]" [type:36, flag:0, scope:1] @ L2C17
+  parsing expression
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:1] @ L2C20
+  Token: "1" [type:41, flag:16, scope:1] @ L2C21
+  parsing expression
+  Token: "]" [type:36, flag:0, scope:1] @ L2C22
+  Token: "function" [type:25, flag:0, scope:1] @ L4C8
+  parsing module
+  Token: "test" [type:42, flag:0, scope:2] @ L4C13
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:2] @ L4C14
+    function set on: test
+  Token: "long" [type:5, flag:1, scope:2] @ L4C18
+  parsing scalar type
+  Token: "in" [type:42, flag:0, scope:2] @ L4C21
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:2] @ L4C22
+  Token: "long" [type:5, flag:1, scope:2] @ L4C26
+  parsing type
+  parsing scalar type
+  Token: "return" [type:28, flag:0, scope:2] @ L5C10
+    variable set on: in
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  parsing expression
+  parsing parameter list
+  parsing expression
+  parsing l-value
+  Token: "!" [type:40, flag:0, scope:2] @ L5C19
+  parsing parameter list
+  Token: "end" [type:29, flag:0, scope:2] @ L7C3
+  parsing module
+  Token: "" [type:1, flag:0, scope:0] @ L7C3
+Parsing succeeded.
+Running type checker... 
+  Type Debug @ L2C10: type long of size 2
+  Type Debug @ L4C8: lvalue n has index type byte
+  Type Debug @ L2C19: lvalue n has index type byte
+  Type Debug @ L4C8: binary + long and long
+  Type Debug @ L2C10: function sum has type long
+  Type Debug @ L5C10: type long of size 0
+  Type Debug @ L5C19: lvalue in with no index
+  Type Debug @ L7C3: funccall sum with 1 params
+    checking param #1 of sum

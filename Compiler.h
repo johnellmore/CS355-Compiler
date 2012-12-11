@@ -17,3 +17,4 @@ using namespace std;
 #include "Parser.h"
 #include "Dump.h"
 #include "TypeChecker.h"
+#include "CodeGen.h"

@@ -1,0 +1,75 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "testinput" [type:42, flag:0, scope:1] @ L1C18
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C19
+    function set on: testinput
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C23
+  parsing scalar type
+  Token: "param1" [type:42, flag:0, scope:1] @ L1C30
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C31
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C35
+  parsing type
+  parsing scalar type
+  Token: ";" [type:38, flag:0, scope:1] @ L1C37
+    variable set on: param1
+  Token: "param2" [type:42, flag:0, scope:1] @ L1C44
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C45
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C49
+  parsing type
+  parsing scalar type
+  Token: ";" [type:38, flag:0, scope:1] @ L1C51
+    variable set on: param2
+  Token: "param3" [type:42, flag:0, scope:1] @ L1C58
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C59
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C63
+  parsing type
+  parsing scalar type
+  Token: "end" [type:29, flag:0, scope:1] @ L1C67
+    variable set on: param3
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "function" [type:25, flag:0, scope:1] @ L3C8
+  parsing module
+  Token: "anthertest" [type:42, flag:0, scope:2] @ L3C19
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:2] @ L3C20
+    function set on: anthertest
+  Token: "bool" [type:2, flag:1, scope:2] @ L3C24
+  parsing scalar type
+  Token: "test" [type:42, flag:0, scope:2] @ L3C29
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:2] @ L3C30
+  Token: "bool" [type:2, flag:1, scope:2] @ L3C34
+  parsing type
+  parsing scalar type
+  Token: "return" [type:28, flag:0, scope:2] @ L4C10
+    variable set on: test
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  parsing expression
+  parsing parameter list
+  parsing expression
+  parsing l-value
+  parsing parameter list
+  parsing expression
+  parsing l-value
+  Token: "and" [type:17, flag:2, scope:2] @ L4C34
+  parsing parameter list
+  parsing expression
+  parsing expression
+  parsing l-value
+  Token: "]" [type:36, flag:0, scope:2] @ L4C41
+  parsing expression

@@ -1,0 +1,16 @@
+Setup...
+  Token: "vars" [type:26, flag:0, scope:0] @ L1C4
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "something" [type:42, flag:0, scope:0] @ L1C14
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:0] @ L1C15
+  Token: "bool" [type:2, flag:1, scope:0] @ L1C19
+  parsing type
+  parsing scalar type
+  Token: "end" [type:29, flag:0, scope:0] @ L1C23
+    variable set on: something
+  Token: "return" [type:28, flag:0, scope:0] @ L3C6
+  parsing module

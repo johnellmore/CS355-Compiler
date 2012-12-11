@@ -1,0 +1,8 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "neg" [type:20, flag:4, scope:1] @ L1C12
+  parsing function signature
+    Finished function signature parsing

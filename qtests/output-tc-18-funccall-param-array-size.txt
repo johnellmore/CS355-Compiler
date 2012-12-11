@@ -1,0 +1,226 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "sum" [type:42, flag:0, scope:1] @ L1C12
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C13
+    function set on: sum
+  Token: "long" [type:5, flag:1, scope:1] @ L1C17
+  parsing scalar type
+  Token: "in" [type:42, flag:0, scope:1] @ L1C20
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C21
+  Token: "long" [type:5, flag:1, scope:1] @ L1C25
+  parsing type
+  parsing scalar type
+  Token: "[" [type:35, flag:0, scope:1] @ L1C26
+  Token: "100" [type:41, flag:16, scope:1] @ L1C29
+  Token: "]" [type:36, flag:0, scope:1] @ L1C30
+  Token: ";" [type:38, flag:0, scope:1] @ L1C32
+    variable set on: in
+  Token: "size" [type:42, flag:0, scope:1] @ L1C37
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C38
+  Token: "byte" [type:3, flag:1, scope:1] @ L1C42
+  parsing type
+  parsing scalar type
+  Token: "vars" [type:26, flag:0, scope:1] @ L2C4
+    variable set on: size
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "total" [type:42, flag:0, scope:1] @ L2C10
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L2C11
+  Token: "long" [type:5, flag:1, scope:1] @ L2C15
+  parsing type
+  parsing scalar type
+  Token: ";" [type:38, flag:0, scope:1] @ L2C17
+    variable set on: total
+  Token: "j" [type:42, flag:0, scope:1] @ L2C19
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L2C20
+  Token: "byte" [type:3, flag:1, scope:1] @ L2C24
+  parsing type
+  parsing scalar type
+  Token: "do" [type:27, flag:0, scope:1] @ L2C27
+    variable set on: j
+  Token: "set" [type:30, flag:0, scope:1] @ L3C7
+  parsing statement list
+  parsing statement
+  parsing l-value
+  Token: "0" [type:41, flag:16, scope:1] @ L3C11
+  parsing expression
+  Token: ";" [type:38, flag:0, scope:1] @ L3C13
+  Token: "{" [type:33, flag:0, scope:1] @ L4C5
+  parsing statement list
+  parsing statement
+  Token: "set" [type:30, flag:0, scope:1] @ L5C11
+  parsing statement list
+  parsing statement
+  parsing l-value
+  Token: "+" [type:6, flag:2, scope:1] @ L5C19
+  parsing expression
+  parsing expression
+  parsing l-value
+  parsing expression
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:1] @ L5C29
+  parsing expression
+  parsing l-value
+  Token: "]" [type:36, flag:0, scope:1] @ L5C31
+  Token: ";" [type:38, flag:0, scope:1] @ L5C32
+  Token: "++" [type:21, flag:8, scope:1] @ L6C10
+  parsing statement list
+  parsing statement
+  parsing expression
+  parsing l-value
+  Token: "}" [type:34, flag:0, scope:1] @ L7C5
+  Token: "^" [type:39, flag:0, scope:1] @ L7C7
+  Token: "<" [type:11, flag:2, scope:1] @ L7C9
+  parsing expression
+  parsing expression
+  parsing l-value
+  parsing expression
+  parsing l-value
+  Token: "return" [type:28, flag:0, scope:1] @ L8C10
+  parsing expression
+  parsing l-value
+  Token: "function" [type:25, flag:0, scope:1] @ L10C8
+  parsing module
+  Token: "addthree" [type:42, flag:0, scope:2] @ L10C17
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:2] @ L10C18
+    function set on: addthree
+  Token: "long" [type:5, flag:1, scope:2] @ L10C22
+  parsing scalar type
+  Token: "n1" [type:42, flag:0, scope:2] @ L10C25
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:2] @ L10C26
+  Token: "long" [type:5, flag:1, scope:2] @ L10C30
+  parsing type
+  parsing scalar type
+  Token: ";" [type:38, flag:0, scope:2] @ L10C32
+    variable set on: n1
+  Token: "n2" [type:42, flag:0, scope:2] @ L10C35
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:2] @ L10C36
+  Token: "long" [type:5, flag:1, scope:2] @ L10C40
+  parsing type
+  parsing scalar type
+  Token: ";" [type:38, flag:0, scope:2] @ L10C42
+    variable set on: n2
+  Token: "n3" [type:42, flag:0, scope:2] @ L10C45
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:2] @ L10C46
+  Token: "long" [type:5, flag:1, scope:2] @ L10C51
+  parsing type
+  parsing scalar type
+  Token: "vars" [type:26, flag:0, scope:2] @ L11C4
+    variable set on: n3
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "arr" [type:42, flag:0, scope:2] @ L11C8
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:2] @ L11C9
+  Token: "long" [type:5, flag:1, scope:2] @ L11C13
+  parsing type
+  parsing scalar type
+  Token: "[" [type:35, flag:0, scope:2] @ L11C14
+  Token: "10" [type:41, flag:16, scope:2] @ L11C16
+  Token: "]" [type:36, flag:0, scope:2] @ L11C17
+  Token: "do" [type:27, flag:0, scope:2] @ L11C20
+    variable set on: arr
+  Token: "set" [type:30, flag:0, scope:2] @ L12C7
+  parsing statement list
+  parsing statement
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:2] @ L12C12
+  Token: "0" [type:41, flag:16, scope:2] @ L12C13
+  parsing expression
+  Token: "]" [type:36, flag:0, scope:2] @ L12C14
+  parsing expression
+  parsing l-value
+  Token: ";" [type:38, flag:0, scope:2] @ L12C18
+  Token: "set" [type:30, flag:0, scope:2] @ L13C7
+  parsing statement list
+  parsing statement
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:2] @ L13C12
+  Token: "1" [type:41, flag:16, scope:2] @ L13C13
+  parsing expression
+  Token: "]" [type:36, flag:0, scope:2] @ L13C14
+  parsing expression
+  parsing l-value
+  Token: ";" [type:38, flag:0, scope:2] @ L13C18
+  Token: "set" [type:30, flag:0, scope:2] @ L14C7
+  parsing statement list
+  parsing statement
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:2] @ L14C12
+  Token: "2" [type:41, flag:16, scope:2] @ L14C13
+  parsing expression
+  Token: "]" [type:36, flag:0, scope:2] @ L14C14
+  parsing expression
+  parsing l-value
+  Token: "return" [type:28, flag:0, scope:2] @ L15C10
+  parsing expression
+  parsing parameter list
+  parsing expression
+  parsing l-value
+  Token: "3" [type:41, flag:16, scope:2] @ L15C20
+  parsing parameter list
+  parsing expression
+  Token: "!" [type:40, flag:0, scope:2] @ L15C22
+  parsing parameter list
+  Token: "end" [type:29, flag:0, scope:2] @ L17C3
+  parsing module
+  Token: "" [type:1, flag:0, scope:0] @ L17C3
+Parsing succeeded.
+Running type checker... 
+  Type Debug @ L1C32: type long of size 100
+  Type Debug @ L2C4: type byte of size 0
+  Type Debug @ L2C17: type long of size 0
+  Type Debug @ L2C27: type byte of size 0
+  Type Debug @ L3C11: lvalue j with no index
+  Type Debug @ L3C13: assigning byte into byte
+  Type Debug @ L5C31: lvalue j with no index
+  Type Debug @ L5C32: lvalue in has index type byte
+  Type Debug @ L5C28: lvalue total with no index
+  Type Debug @ L5C32: binary + long and long
+  Type Debug @ L5C19: lvalue total with no index
+  Type Debug @ L5C32: assigning long into long
+  Type Debug @ L7C5: lvalue j with no index
+  Type Debug @ L7C5: incdec operating on byte
+  Type Debug @ L8C10: lvalue size with no index
+  Type Debug @ L7C16: lvalue j with no index
+  Type Debug @ L8C10: binary < byte and byte
+  Type Debug @ L10C8: lvalue total with no index
+  Type Debug @ L2C4: function sum has type long
+  Type Debug @ L10C32: type long of size 0
+  Type Debug @ L10C42: type long of size 0
+  Type Debug @ L11C4: type long of size 0
+  Type Debug @ L11C20: type long of size 10
+  Type Debug @ L12C18: lvalue n1 with no index
+  Type Debug @ L12C17: lvalue arr has index type byte
+  Type Debug @ L12C18: assigning long into long
+  Type Debug @ L13C18: lvalue n2 with no index
+  Type Debug @ L13C17: lvalue arr has index type byte
+  Type Debug @ L13C18: assigning long into long
+  Type Debug @ L15C10: lvalue n3 with no index
+  Type Debug @ L14C17: lvalue arr has index type byte
+  Type Debug @ L15C10: assigning long into long
+  Type Debug @ L15C20: lvalue arr with no index
+  Type Debug @ L17C3: funccall sum with 2 params
+    checking param #1 of sum

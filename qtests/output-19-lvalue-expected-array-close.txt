@@ -1,0 +1,34 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "something" [type:42, flag:0, scope:1] @ L1C18
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C19
+    function set on: something
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C23
+  parsing scalar type
+  Token: "input" [type:42, flag:0, scope:1] @ L1C29
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C30
+  Token: "long" [type:5, flag:1, scope:1] @ L1C34
+  parsing type
+  parsing scalar type
+  Token: "[" [type:35, flag:0, scope:1] @ L1C35
+  Token: "10" [type:41, flag:16, scope:1] @ L1C37
+  Token: "]" [type:36, flag:0, scope:1] @ L1C38
+  Token: "do" [type:27, flag:0, scope:1] @ L1C41
+    variable set on: input
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "set" [type:30, flag:0, scope:1] @ L2C7
+  parsing statement list
+  parsing statement
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:1] @ L2C14
+  Token: "5" [type:41, flag:16, scope:1] @ L2C15
+  parsing expression
+  Token: "5" [type:41, flag:16, scope:1] @ L2C17

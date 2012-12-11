@@ -1,0 +1,52 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "test" [type:42, flag:0, scope:1] @ L1C13
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C14
+    function set on: test
+  Token: "long" [type:5, flag:1, scope:1] @ L1C18
+  parsing scalar type
+  Token: "input" [type:42, flag:0, scope:1] @ L1C24
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C25
+  Token: "long" [type:5, flag:1, scope:1] @ L1C29
+  parsing type
+  parsing scalar type
+  Token: "[" [type:35, flag:0, scope:1] @ L1C30
+  Token: "10" [type:41, flag:16, scope:1] @ L1C32
+  Token: "]" [type:36, flag:0, scope:1] @ L1C33
+  Token: "do" [type:27, flag:0, scope:1] @ L1C36
+    variable set on: input
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "set" [type:30, flag:0, scope:1] @ L2C7
+  parsing statement list
+  parsing statement
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:1] @ L2C14
+  Token: "6" [type:41, flag:16, scope:1] @ L2C15
+  parsing expression
+  Token: "]" [type:36, flag:0, scope:1] @ L2C16
+  parsing expression
+  parsing l-value
+  Token: "return" [type:28, flag:0, scope:1] @ L3C10
+  parsing expression
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:1] @ L3C17
+  Token: "5" [type:41, flag:16, scope:1] @ L3C18
+  parsing expression
+  Token: "]" [type:36, flag:0, scope:1] @ L3C19
+  Token: "end" [type:29, flag:0, scope:1] @ L5C3
+  parsing module
+  Token: "" [type:1, flag:0, scope:0] @ L5C3
+Parsing succeeded.
+Running type checker... 
+  Type Debug @ L1C36: type long of size 10
+  Type Debug @ L3C10: lvalue input with no index
+  Type Debug @ L2C22: lvalue input has index type byte
+  Type Debug @ L5C3: lvalue input has index type byte

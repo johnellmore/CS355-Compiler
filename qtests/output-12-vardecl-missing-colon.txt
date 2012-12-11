@@ -1,0 +1,16 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "something" [type:42, flag:0, scope:1] @ L1C18
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C19
+    function set on: something
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C23
+  parsing scalar type
+  Token: "x" [type:42, flag:0, scope:1] @ L1C25
+  parsing declaration list
+  parsing variable declaration
+  Token: ";" [type:38, flag:0, scope:1] @ L1C26
+    Finished function signature parsing

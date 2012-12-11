@@ -1,8 +1,6 @@
-class TypeChecker : public Visitor {
+class CodeGen : public Visitor {
 public:
-	void printError(AST * node, string msg);
-	string debugStr(AST * node);
-	
+	CodeGen() : numLabels(0) {};
 	string applyType(Type *type);
 	string applyModule(Module *module,const StringList &vars,const StringList &funcs);
 	string applyVarDecl(VarDecl *vd,string type);
@@ -18,7 +16,11 @@ public:
 	string applyIncDecExpr(IncDecExpr *id,string lvalue);
 	string applyFuncCall(FuncCall *fc,const StringList &params);
 	string applyTypeConversion(TypeConversion *tc, string expr);
-private:
-	bool checkIsFullArray(Expr * e);
+protected:
+	static string concatenateLines(const StringList &strings);
 	string getAddr(const string reg, const int offset);
+	string getArrayAddr(const string baseReg, const int offset, const string indexReg);
+	string newLabel();
+private:
+	int numLabels;
 };

@@ -1,0 +1,23 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "test" [type:42, flag:0, scope:1] @ L1C13
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C14
+    function set on: test
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C18
+  parsing scalar type
+  Token: "return" [type:28, flag:0, scope:1] @ L2C10
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "5" [type:41, flag:16, scope:1] @ L2C12
+  parsing expression
+  Token: "end" [type:29, flag:0, scope:1] @ L4C3
+  parsing module
+  Token: "" [type:1, flag:0, scope:0] @ L4C3
+Parsing succeeded.
+Running type checker... 
+  Type Debug @ L2C10: function test has type bool

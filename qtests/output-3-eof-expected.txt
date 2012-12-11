@@ -1,0 +1,6 @@
+Setup...
+  Token: "end" [type:29, flag:0, scope:0] @ L1C3
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "function" [type:25, flag:0, scope:0] @ L3C8

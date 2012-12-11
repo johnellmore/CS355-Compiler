@@ -1,0 +1,92 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "add" [type:42, flag:0, scope:1] @ L1C12
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C13
+    function set on: add
+  Token: "long" [type:5, flag:1, scope:1] @ L1C17
+  parsing scalar type
+  Token: "n1" [type:42, flag:0, scope:1] @ L1C20
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C21
+  Token: "long" [type:5, flag:1, scope:1] @ L1C25
+  parsing type
+  parsing scalar type
+  Token: ";" [type:38, flag:0, scope:1] @ L1C27
+    variable set on: n1
+  Token: "n2" [type:42, flag:0, scope:1] @ L1C30
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C31
+  Token: "long" [type:5, flag:1, scope:1] @ L1C35
+  parsing type
+  parsing scalar type
+  Token: "return" [type:28, flag:0, scope:1] @ L2C10
+    variable set on: n2
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "+" [type:6, flag:2, scope:1] @ L2C12
+  parsing expression
+  parsing expression
+  parsing l-value
+  parsing expression
+  parsing l-value
+  Token: "function" [type:25, flag:0, scope:1] @ L4C8
+  parsing module
+  Token: "test" [type:42, flag:0, scope:2] @ L4C13
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:2] @ L4C14
+    function set on: test
+  Token: "long" [type:5, flag:1, scope:2] @ L4C18
+  parsing scalar type
+  Token: "input" [type:42, flag:0, scope:2] @ L4C24
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:2] @ L4C25
+  Token: "short" [type:4, flag:1, scope:2] @ L4C30
+  parsing type
+  parsing scalar type
+  Token: "[" [type:35, flag:0, scope:2] @ L4C31
+  Token: "10" [type:41, flag:16, scope:2] @ L4C33
+  Token: "]" [type:36, flag:0, scope:2] @ L4C34
+  Token: "return" [type:28, flag:0, scope:2] @ L5C10
+    variable set on: input
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  parsing expression
+  parsing parameter list
+  parsing expression
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:2] @ L5C21
+  Token: "5" [type:41, flag:16, scope:2] @ L5C22
+  parsing expression
+  Token: "]" [type:36, flag:0, scope:2] @ L5C23
+  parsing parameter list
+  parsing expression
+  parsing l-value
+  Token: "!" [type:40, flag:0, scope:2] @ L5C31
+  parsing parameter list
+  Token: "end" [type:29, flag:0, scope:2] @ L7C3
+  parsing module
+  Token: "" [type:1, flag:0, scope:0] @ L7C3
+Parsing succeeded.
+Running type checker... 
+  Type Debug @ L1C27: type long of size 0
+  Type Debug @ L2C10: type long of size 0
+  Type Debug @ L4C8: lvalue n2 with no index
+  Type Debug @ L2C18: lvalue n1 with no index
+  Type Debug @ L4C8: binary + long and long
+  Type Debug @ L2C10: function add has type long
+  Type Debug @ L5C10: type short of size 10
+  Type Debug @ L5C29: lvalue input has index type byte
+  Type Debug @ L5C31: lvalue input with no index
+  Type Debug @ L7C3: funccall add with 2 params
+    checking param #1 of add
+      converting add param #1
+    checking param #2 of add

@@ -1,0 +1,52 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "scopetest" [type:42, flag:0, scope:1] @ L1C18
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C19
+    function set on: scopetest
+  Token: "long" [type:5, flag:1, scope:1] @ L1C23
+  parsing scalar type
+  Token: "param" [type:42, flag:0, scope:1] @ L1C29
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C30
+  Token: "long" [type:5, flag:1, scope:1] @ L1C34
+  parsing type
+  parsing scalar type
+  Token: "vars" [type:26, flag:0, scope:1] @ L2C4
+    variable set on: param
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L2C11
+  Token: "long" [type:5, flag:1, scope:1] @ L2C15
+  parsing type
+  parsing scalar type
+  Token: "do" [type:27, flag:0, scope:1] @ L2C18
+    variable set on: param
+  Token: "set" [type:30, flag:0, scope:1] @ L3C7
+  parsing statement list
+  parsing statement
+  parsing l-value
+  parsing expression
+  parsing l-value
+  Token: "return" [type:28, flag:0, scope:1] @ L4C10
+  parsing expression
+  parsing l-value
+  Token: "end" [type:29, flag:0, scope:1] @ L6C3
+  parsing module
+  Token: "" [type:1, flag:0, scope:0] @ L6C3
+Parsing succeeded.
+Running type checker... 
+  Type Debug @ L2C4: type long of size 0
+  Type Debug @ L2C18: type long of size 0
+  Type Debug @ L4C10: lvalue param with no index
+  Type Debug @ L3C19: lvalue param with no index
+  Type Debug @ L4C10: assigning long into long
+  Type Debug @ L6C3: lvalue param with no index
+  Type Debug @ L2C4: function scopetest has type long

@@ -1,0 +1,65 @@
+Setup...
+  Token: "function" [type:25, flag:0, scope:0] @ L1C8
+Setup complete.
+Parsing... 
+  parsing module
+  Token: "test" [type:42, flag:0, scope:1] @ L1C13
+  parsing function signature
+  Token: ":" [type:37, flag:0, scope:1] @ L1C14
+    function set on: test
+  Token: "long" [type:5, flag:1, scope:1] @ L1C18
+  parsing scalar type
+  Token: "i" [type:42, flag:0, scope:1] @ L1C20
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C21
+  Token: "bool" [type:2, flag:1, scope:1] @ L1C25
+  parsing type
+  parsing scalar type
+  Token: ";" [type:38, flag:0, scope:1] @ L1C27
+    variable set on: i
+  Token: "l" [type:42, flag:0, scope:1] @ L1C29
+  parsing declaration list
+  parsing variable declaration
+  Token: ":" [type:37, flag:0, scope:1] @ L1C30
+  Token: "long" [type:5, flag:1, scope:1] @ L1C34
+  parsing type
+  parsing scalar type
+  Token: "[" [type:35, flag:0, scope:1] @ L1C35
+  Token: "10" [type:41, flag:16, scope:1] @ L1C37
+  Token: "]" [type:36, flag:0, scope:1] @ L1C38
+  Token: "do" [type:27, flag:0, scope:1] @ L1C41
+    variable set on: l
+    Finished function signature parsing
+    Checking for function existence... 
+  parsing function body
+  Token: "--" [type:22, flag:8, scope:1] @ L2C6
+  parsing statement list
+  parsing statement
+  parsing expression
+  parsing l-value
+  Token: ";" [type:38, flag:0, scope:1] @ L2C9
+  Token: "++" [type:21, flag:8, scope:1] @ L3C6
+  parsing statement list
+  parsing statement
+  parsing expression
+  parsing l-value
+  Token: "return" [type:28, flag:0, scope:1] @ L4C10
+  parsing expression
+  parsing l-value
+  Token: "[" [type:35, flag:0, scope:1] @ L4C13
+  Token: "0" [type:41, flag:16, scope:1] @ L4C14
+  parsing expression
+  Token: "]" [type:36, flag:0, scope:1] @ L4C15
+  Token: "end" [type:29, flag:0, scope:1] @ L6C3
+  parsing module
+  Token: "" [type:1, flag:0, scope:0] @ L6C3
+Parsing succeeded.
+Running type checker... 
+  Type Debug @ L1C27: type bool of size 0
+  Type Debug @ L1C41: type long of size 10
+  Type Debug @ L2C9: lvalue i with no index
+  Type Debug @ L2C9: incdec operating on bool
+  Type Debug @ L4C10: lvalue l with no index
+  Type Debug @ L4C10: incdec operating on long
+  Type Debug @ L6C3: lvalue l has index type byte

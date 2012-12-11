@@ -19,6 +19,11 @@ string TypeChecker::applyType(Type *ty) {
 }
 
 string TypeChecker::applyModule(Module *module,const StringList &vars,const StringList &funcs) {
+	// set up variable names on global vars for code generation
+	for (auto v = module->vars.begin(); v != module->vars.end(); v++) {
+		(*v)->name->setAsmAddr("var_"+(*v)->name->getText());
+	}
+	
 	return concatenate(vars)+concatenate(funcs); // don't need no stinkin type checking
 }
 
@@ -49,6 +54,22 @@ string TypeChecker::applyFunc(Func *func,const StringList &params,const StringLi
 			}
 		}
 	}
+	
+	// set code gen addresses on func params
+	int paramNum = 1;
+	for (auto p = func->params.begin(); p != func->params.end(); p++) {
+		VarDecl * param = &**p;
+		param->name->setAsmAddr(getAddr("ebp", (paramNum*4)+4));
+		paramNum++;
+	}
+	// set code gen addresses on func vars
+	int localVarSpace = 0;
+	for (auto v = func->vars.begin(); v != func->vars.end(); v++) {
+		VarDecl * var = &**v;
+		localVarSpace += 4;
+		var->name->setAsmAddr(getAddr("ebp", 0-localVarSpace));
+	}
+	func->paramSpace = localVarSpace;
 	
 	// check that the return value is the correct type
 	auto returnType = func->returnExpr->getType();
@@ -326,4 +347,12 @@ string TypeChecker::applyTypeConversion(TypeConversion *tc, string expr) {
 bool TypeChecker::checkIsFullArray(Expr *e) {
 	auto lve = dynamic_cast<LValue*>(e);
 	return (lve != NULL && lve->name->hasAttribute(TF_ARRAY) && lve->index == NULL);
+}
+
+string TypeChecker::getAddr(const string reg, const int offset) {
+	stringstream addr;
+	addr << "[" << reg;
+	if (offset > 0) addr << "+";
+	addr << offset << "]";
+	return addr.str();
 }

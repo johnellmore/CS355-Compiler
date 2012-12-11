@@ -99,12 +99,16 @@ public:
 	void				setDeclaration(AST * decl) { if (!declaration) declaration = decl; };
 	AST *				getDeclaration() { return declaration; };
 	
+	void				setAsmAddr(string loc) { asmAddr = loc; };
+	string				getAsmAddr() const { return asmAddr; };
+	
 private:
 	string				text;
 	TokenType			type;
 	TokenFlag			flags;
 	unsigned int		scope;
 	AST *				declaration;
+	string				asmAddr;
 };
 
 #ifdef VERBOSE
